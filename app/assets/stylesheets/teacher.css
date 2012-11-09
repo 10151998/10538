@@ -1,0 +1,577 @@
+body {
+      margin: 0;
+      background-color: black;
+      letter-spacing: 1px;
+      font-family: 'Cabin', 'Trebuchet', sans-serif;
+      color: white;
+    }
+
+    .button { 
+      display: inline;
+      *display: inline;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 15px;
+      margin-bottom: 0;
+      *margin-left: .3em;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      font-family: "Cabin";
+      font-weight: normal;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: normal;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: -ms-linear-gradient(top, #313032);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#313032), to(#313032));
+      background-image: -webkit-linear-gradient(top, #313032, #313032);
+      background-image: -o-linear-gradient(top, #313032, #313032);
+      background-image: linear-gradient(top, #313032, #313032);
+      background-image: -moz-linear-gradient(top, #313032, #313032);
+      background-repeat: repeat-x;
+      border: 1px solid #575559;
+      *border: 0;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+      *zoom: 1;
+    }
+    .button-challenge {
+      display: inline;
+      *display: inline;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 15px;
+      margin-bottom: 0;
+      *margin-left: .3em;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      font-family: "Cabin";
+      font-weight: normal;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      font-weight: normal;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: -ms-linear-gradient(top, red, #CC1100);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(red), to(#F09638));
+      background-image: -webkit-linear-gradient(top, red, #CC1100);
+      background-image: -o-linear-gradient(top, red, #CC1100);
+      background-image: linear-gradient(top, red, #CC1100);
+      background-image: -moz-linear-gradient(top, red, #CC1100);
+      background-repeat: repeat-x;
+      border: 1px solid #CC1100;
+      *border: 0;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+      *zoom: 1;
+    }
+    #site-nav {
+      width: 100%;
+      min-height: 70px;
+      float: none;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 9999;
+      margin-top: 0px;
+    }
+
+    #site-nav h1 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 0.8em;
+      padding-top: 10px;
+    }
+
+    #site-nav h1 a { color: #D26; }
+    #site-nav h1 a:hover { color: #A2C; }
+
+    #site-nav h2 {
+      font-family: "Cabin", "Tahoma", sans-serif; 
+      font-size: 20px;
+      font-weight: normal;
+      color:white;
+      margin: 0;
+      position: absolute;
+      left:120px;
+      top:20%;
+    }
+
+    #site-nav ul {
+      list-style: none;
+      padding-left: 0;
+      font-family: "Cabin", "Tahoma", sans-serif; ; 
+      font-size: 16px;
+      font-weight: normal;
+      color:white;
+      position: absolute;
+      top:25%;
+      left: 10%;
+      display: inline-block;
+    }
+
+    #site-nav li {
+      float: left;
+      top:0;
+      padding-right: 20px;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+    }
+
+    #site-nav li a {
+      text-decoration: none;
+      font-weight: normal;
+      color:white;
+    }
+
+    #site-nav li a:hover {
+      color: red;
+      cursor:hand;
+    }
+    #site-nav div.logo {
+      width:20%;
+      margin-top: -2.5%;
+    }
+    .login-right {
+      margin-right: 0;
+      float: right;
+      color: white;
+      font-family: 'Cabin', 'Trebuchet', sans-serif;
+      padding-right: 15px;
+      padding-top: 15px;
+      text-align: right;
+      letter-spacing: 0.8px;
+      font-size: 14px;
+    }
+    .login-right a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .login-right a:hover {
+      color: white;
+      text-decoration: none;
+    }
+    #students {
+      background-image: url(/assets/Dargie-2b.png);
+      background-repeat: no-repeat;
+      background-color: black;
+      background-size: 70% 100%;
+      background-position: right;
+      box-shadow: 2px 3px 18px #313032;
+      width:100%;
+      height: 600px;
+      letter-spacing: normal;
+      text-shadow: none;
+      position: absolute;
+      top: 11%;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+  
+    #students h2 {
+      font-family: "Cabin";
+      margin: 2px; 
+      font-weight: normal;
+      color: black;
+      text-shadow: none;
+    }
+ #sidebar {
+      z-index: 1000;
+      background-color: #EBEBEB;
+      height: 680px;
+      width: 30%;
+      text-align: left;
+      font-size: 16px;
+      color: black;
+      border-radius: 5px;
+      margin: 0;
+      box-shadow: 2px 2px 12px #313032;
+      border-color: #181718;
+      border-style: inset;
+      border-size: .5px;
+      border-width: 2px;
+      text-transform:capitalize
+    }
+    #sidebar table {
+      margin-left: 10%;
+      margin-top: 5%;
+      font-size: 25px;
+    }
+    #sidebar tr a {
+      font-style: none;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    #sidebar tr .spacer > td {
+      padding-top: 10%;
+    }
+    #sidebar p {
+      color: white;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    #sidebar h1 {
+      font-size: 20px;
+      color: black;
+    }
+    #sidebar h2 {
+      font-size: 20px;
+    }
+    #sidebar h3 {
+      color: black;
+      font-size: 24px;
+      font-weight: 300;
+    }
+    #sidebar h4 {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      line-height: 30px;
+    }
+    #sidebar h5 {
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 1.5px;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    #sidebar h6 {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin: 0;
+      padding: 0;
+    }
+    #gallery {
+      z-index: 400;
+      float: right;
+      background-color: rgba(0,0,0,0.8);
+      height: 420px;
+      width: 700px;
+      position: absolute;
+      top: -5%;
+      right: 5%;
+      box-shadow: 2px 3px 18px #000000;
+      border-color: rgba(0,0,0,1);
+      border-style: ridge;
+      border-size: .5px;
+      padding: 20px;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      overflow: scroll;
+    }
+    #gallery_frame {
+      margin-top: 8%;
+    }
+    #gallery_frame h6 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    #gallery_frame h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    #teammate_avatar {
+      margin-top:0; 
+      margin-left:25px;
+      margin-right:25px;
+    }
+    .team_info {
+      float:left;
+      text-align:left; 
+      text-transform:capitalize
+    }
+    #scoreboard table {
+      margin: auto;
+      font-size: 25px;
+    } 
+    #scoreboard table td {
+      padding-right: 10px;
+    }
+    #gallery table {
+      margin: auto;
+      margin-top:20px;
+      font-size: 25px;
+      line-height: 26px;
+    }
+    #gallery a {
+      color: white;
+    }
+    #gallery_frame table td {
+      padding-right: 10px;
+    }
+    #gallery_frame table tr:hover {
+      color: white;
+    }
+    #gallery_frame table tr:hover a {
+      color: white;
+    }
+    #gallery_frame table tr:hover  a:hover {
+      color: red;
+    }
+    #stu_menu1, #stu_menu2, #stu_menu3 {
+      z-index: 1000;
+      background-color: rgba(0,0,0,0.8);
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      border-radius: 90px;
+      border-style:groove;
+      border-size: 3px;
+      border-color: rgba(0,0,0,0.8);
+      box-shadow: 2px 3px 18px #000000;
+      margin-left: 30px;
+      height: 80px;
+      padding-top: 40px;
+      margin-top: -12%;
+      margin-bottom: -19%;
+    }
+    #stu_menu1 a, #stu_menu2 a, #stu_menu3 a {
+      font-style: none;
+      text-decoration: none;
+      font-size: 16px;
+      color: white;
+    }
+    #stu_menu1:hover, #stu_menu2:hover, #stu_menu3:hover {
+      box-shadow: 2px 4px 18px #F0AB02;
+    }
+    #stu_menu1:hover a, #stu_menu2:hover a, #stu_menu3:hover a {
+      color: #F0AB02;
+    }
+    .mentor_photo {
+      height:100px; 
+      width:120px; 
+      margin:15px;
+      box-shadow: 1px 1px 14px #5E2612;
+      border: 3px solid #F0AB02;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+    }
+    .mentor_photo:hover {
+      background-color: white;
+    }
+    fieldset {
+          border:0;
+          position: absolute;
+          right: 0%;
+          top:12%;
+          width:30%;
+          text-align: right;
+        }
+        .login {
+          font-family:'Gill Sans'; 
+          font-size: 12px; 
+          font-weight: normal;
+          line-height: 16px; 
+          padding: 2px;
+          margin-top: -13px;
+        }
+        .btn-login {
+          display: inline;
+          *display: inline;
+          padding: 5px;
+          margin-bottom: 0;
+          *margin-left: .3em;
+          font-size: 80%;
+          line-height: 90%;
+          text-align: left;
+          font-weight: normal;
+          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+          vertical-align: middle;
+          cursor: pointer;
+          background-image: -ms-linear-gradient(top, #F0AB02, #F09638);
+          background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F0AB02), to(#F09638));
+          background-image: -webkit-linear-gradient(top, #F0AB02, #F09638);
+          background-image: -o-linear-gradient(top, #F0AB02, #F09638);
+          background-image: linear-gradient(top, #F0AB02, #F09638);
+          background-image: -moz-linear-gradient(top, #F0AB02, #F09638);
+          background-repeat: repeat-x;
+          border: 1px solid #000000;
+          *border: 0;
+          -webkit-border-radius: 4px;
+             -moz-border-radius: 4px;
+                  border-radius: 4px;
+          *zoom: 1;
+        }
+
+    .row {
+      width: auto;
+      padding: 2%;
+      margin-left: 10%;
+      margin-top: 0;
+      min-height: 575px;
+      margin-bottom: 30px;
+    }
+
+    [class*="span"] {
+      float: left;
+    }
+
+    .span4 {
+      width: 80%;
+      padding: 5px;
+      margin-left: 12%;
+      padding-right: 0;
+      padding-bottom: 3px;
+      margin-top: 60px;
+      float: none;
+    }
+    .span4 h1 {
+      font-size: 20px;
+      font-weight: lighter;
+      font-family: 'Copse';
+      color: white;
+      line-height: 20px;
+      letter-spacing: 1.2px;
+      margin-top: 5px;
+      padding-bottom: 15px;
+      text-shadow: 0.1em 0.1em 0.2em black;
+    }
+    .best_day {
+
+    }
+    .span3 {
+      width: 80%;
+      float: left;
+      padding-left: 15px;
+      padding-top: 0;
+      margin-right: 10px;
+      text-align: left;
+      margin-left: 12%;
+    }
+    .span3 h4 {
+      font-size: 17px;
+      font-family: 'Cabin';
+      font-weight: normal;
+      text-transform: uppercase;
+      margin: 10px 0 10px 0;
+    }
+    .span3 h2 {
+      font-size: 12px;
+      font-weight: normal;
+      color: white;
+      line-height: 12px;
+      letter-spacing: 1.5px;
+    }
+    .span3 p {
+      font-family: 'Cabin';
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 17px; 
+      padding: 2px;
+      margin: 0;
+    }
+    .span3 img {
+      width: 52%;
+      float: left;
+      vertical-align: middle;
+      border: 0;
+      margin-top: 14px;
+      padding-left: 5px;
+      margin-right: 20px;
+      -ms-interpolation-mode: bicubic;
+    }
+    .span2c {
+      width: 15%;
+      padding-left: 10px;
+      margin-top: -44px;
+      height: 10%;
+    }
+    .span2d {
+      width: 17%;
+      padding-left: 10px;
+      margin-top: -30px;
+    }
+    .span2e {
+      width: 20%;
+      padding-left: 10px;
+      margin-top: -30px;
+    }
+    .span2c h2, p, .span2d h2, p, .span2e h2, p {
+      font-family: 'Cabin';
+      font-size: 15px;
+      font-weight: normal;
+    }
+    .span2d h6, .span2e h6 {
+      margin-top: 20px;
+      font-family: "Copse";
+      font-weight: bold;
+      font-size: 50px;
+      color: rgba(88,88,88,0.6);
+    }
+    .span1c-next {
+      width: auto;
+      background-color: #FF9500;
+    }
+
+    .span1c-next h2 {
+      font-size: 13px;
+      font-weight: bold;
+      color: black;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 15px; 
+      font-family: "Copse";
+    }
+    .best_day {
+      height: auto;
+      width: auto;
+      background-image: -ms-linear-gradient(top, #585858, #000000);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#585858), to(#000000));
+      background-image: -webkit-linear-gradient(top, #585858, #000000);
+      background-image: -o-linear-gradient(top, #585858, #000000);
+      background-image: linear-gradient(top, #585858, #000000);
+      background-image: -moz-linear-gradient(top, #585858, #000000);
+      background-repeat: repeat-x;
+      border: 1px transparent #000000;
+      *border: 0;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+    }
+    .best_day h2 {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      margin-top: 5px;
+      font-family: "Copse";
+      font-size: 15px;
+      line-height: 15px;
+      color: white;
+      font-weight: normal;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    }
+    .best_day h6 {
+      margin: 0;
+      text-align: center;
+      font-family: "Copse";
+      font-size: 50px;
+      color: #F0AB02;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+      margin-top: -20px;
+    }
+    .best_day hr {
+      border: 0;
+      margin: 0;
+      margin-left: 35px;
+      color: black;
+      background-color:  rgba(0,0,0,0.7);
+      height: 3px;
+    }

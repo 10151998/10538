@@ -1,0 +1,36 @@
+<h1>Challenge Message List</h1>
+
+<%= form_tag('/team_challenges') do %>
+  <% @challenge_messages.each do |challenge_message| %>
+    <% if challenge_message.is_read == 0 %>
+      unread</br>
+    <% end %>
+
+    <% if challenge_message.message_type == 0 %>
+      Team:<%= Team.find(challenge_message.sender_team_id).name %> invite your team to join a challenge game.</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+      <%= submit_tag 'accept', :name => "accept[#{challenge_message.id}]", :disabled => ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").any? %>
+      <%= submit_tag 'reject', :name => "reject[#{challenge_message.id}]", :disabled => ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").any?%>
+      <%= link_to_if(ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").empty?, 'Reply', :controller => 'challenge_messages', :action => 'new_reply', :id => challenge_message.id)  %></br>
+
+    <% elsif challenge_message.message_type == 1 %>
+      Team:<%= Team.find(challenge_message.sender_team_id).name %> is not avalable at your time, so they suggest:</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+      <%= submit_tag 'accept', :name => "accept[#{challenge_message.id}]", :disabled => ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").any? %>
+      <%= submit_tag 'reject', :name => "reject[#{challenge_message.id}]", :disabled => ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").any? %>
+      <%= link_to_if(ChallengeMessage.find_by_sql("SELECT * FROM challenge_messages WHERE challenge_messages.sender_team_id = " + challenge_message.receiver_team_id.to_s + " AND challenge_messages.receiver_team_id = " + challenge_message.sender_team_id.to_s + " AND (challenge_messages.message_type = 3 OR challenge_messages.message_type = 2) ").empty?, 'Reply', :controller => 'challenge_messages', :action => 'new_reply', :id => challenge_message.id)  %></br>
+
+    <% elsif challenge_message.message_type == 2 %>
+      team:<%= Team.find(challenge_message.sender_team_id).name %> accept your challenge invitation:</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+
+    <% else %>
+      team:<%= Team.find(challenge_message.sender_team_id).name %> reject your challenge invitation:</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,13 @@
+#config/s3.yml  
+development:
+  bucket: theactivegeneration
+  access_key_id: AKIAJSB4ORNMT5BC4AUA  
+  secret_access_key: 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
+test:
+  bucket: theactivegeneration
+  access_key_id: AKIAJSB4ORNMT5BC4AUA  
+  secret_access_key: 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
+production:
+  bucket: theactivegeneration
+  access_key_id: AKIAJSB4ORNMT5BC4AUA  
+  secret_access_key: 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

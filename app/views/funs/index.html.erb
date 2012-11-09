@@ -1,0 +1,30 @@
+<h1>Listing funs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Game_id</th>
+    <th>Game</th>
+    <th>Datetime</th>
+    <th>Fun_location_id</th>
+    <th>Fun_location</th>
+  </tr>
+
+<% @funs.each do |fun| %>
+  <tr>
+    <td><%= fun.name %></td>
+    <td><%= fun.game_id %></td>
+    <td><%= fun.game.name %></td>
+    <td><%= fun.datetime %></td>
+    <td><%= fun.fun_location_id %></td>
+    <td><%= fun.fun_location.address %></td>
+    <td><%= link_to 'Show', fun %></td>
+    <td><%= link_to 'Edit', edit_fun_path(fun) %></td>
+    <td><%= button_to 'Destroy', fun, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fun', new_fun_path %>

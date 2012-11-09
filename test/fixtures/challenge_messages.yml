@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sender_team_id: 1
+  receiver_team_id: 1
+  user_id: 1
+  datetime: 2012-07-13 09:23:59
+  location: MyString
+
+two:
+  sender_team_id: 1
+  receiver_team_id: 1
+  user_id: 1
+  datetime: 2012-07-13 09:23:59
+  location: MyString

@@ -1,0 +1,9 @@
+<%= @import.csv.path %>
+  <% if @import.processed > 0 %>
+    Success! This import contained <%=  @import.processed %> records</br>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  <% else %>
+    <%= link_to "process", '/imports/proc/' + @import.id.to_s %>
+  <% end %>

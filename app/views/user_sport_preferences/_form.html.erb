@@ -1,0 +1,25 @@
+<%= form_for(@usersports_preference) do |f| %>
+  <% if @usersports_preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usersports_preference.errors.count, "error") %> prohibited this usersports_preference from being saved:</h2>
+
+      <ul>
+      <% @usersports_preference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :idusers %><br />
+    <%= f.number_field :idusers %>
+  </div>
+  <div class="field">
+    <%= f.label :idsports %><br />
+    <%= f.number_field :idsports %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

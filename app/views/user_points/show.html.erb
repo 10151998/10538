@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_point.user_id %>
+</p>
+
+<p>
+  <b>Point event:</b>
+  <%= @user_point.point_event %>
+</p>
+
+<p>
+  <b>Point fun:</b>
+  <%= @user_point.point_fun %>
+</p>
+
+<p>
+  <b>Point music:</b>
+  <%= @user_point.point_music %>
+</p>
+
+<p>
+  <b>Point video:</b>
+  <%= @user_point.point_video %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_point_path(@user_point) %> |
+<%= link_to 'Back', user_points_path %>

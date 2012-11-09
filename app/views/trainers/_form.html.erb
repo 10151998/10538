@@ -1,0 +1,47 @@
+<%= form_for(@trainer) do |f| %>
+  <% if @trainer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trainer.errors.count, "error") %> prohibited this trainer from being saved:</h2>
+
+      <ul>
+      <% @trainer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :sport_id %>
+    <%= f.select(:sport_id, options_for_select(@sports.collect {|sport| [sport.name, sport.id]})) %></br>  
+  </div>
+  <div class="field">
+    <%= f.label :password, 'Password' %>
+    <%= f.password_field :password %><br />
+    <%= f.label :password_confirmation, 'Confirm' %>
+    <%= f.password_field :password_confirmation %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module TeamChallengesHelper
+end

@@ -1,0 +1,2 @@
+module FunLocationsHelper
+end

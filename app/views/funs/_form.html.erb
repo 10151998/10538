@@ -1,0 +1,35 @@
+<%= form_for(@fun) do |f| %>
+  <% if @fun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fun.errors.count, "error") %> prohibited this fun from being saved:</h2>
+
+      <ul>
+      <% @fun.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %></br>
+
+    <%= f.label :game %>
+    <%= f.select(:game_id, options_for_select(@games.collect {|game| [game.name, game.id]})) %></br>  
+
+    <%= f.label :school %>
+    <%= f.select(:school_id, options_for_select(@schools.collect {|school| [school.name, school.id]})) %></br>  
+
+    <%= f.label :datetime %>
+    <%= f.datetime_select :datetime %></br>
+
+    <%= label_tag :fun_location_name %>
+    <%= text_field_tag 'fun_location_name' %></br>
+
+    <%= label_tag :fun_location_address %>
+    <%= text_field_tag 'fun_location_address' %></br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

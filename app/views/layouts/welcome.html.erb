@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta name="robots" content="all" />
+  
+  <title> The Active Generation | Recreation Re-envisioned. </title>
+  
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="imagetoolbar" content="no" />
+  <link rel="shortcut icon" href="http://www.theactivegeneration.com/assets/TAGUsa_icon.png">
+
+  <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css">
+
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://raw.github.com/xlune/jQuery-vGrid-Plugin/master/jquery.vgrid.min.js" type="text/javascript" charset="UTF-8"></script>
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "bootstrap" %>
+  <%= javascript_include_tag "jquery.scrollTo-1.4.3-min" %>
+  <%= stylesheet_link_tag "welcome" %>
+  <%= stylesheet_link_tag "welcome-responsive" %>
+</head>
+<body>
+  <nav id="site-nav" style="height:10%;padding-bottom:0.5%;">
+    <div id="logo">
+      <a href="http://www.theactivegeneration.com"><img src="/assets/Logo_Copse_8-09.png" style="width:85px; position:absolute;left:1.5%;margin-top:-15px;"></a>
+      <h2>Making P.E. Fun!</h2>
+      <ul>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/about">Program</a></li>
+        <li><a href="/investor">Investors</a></li>
+        <li><a href="/press">Press</a></li>
+      </ul>
+  </nav> <!-- #site-nav -->
+  <%= yield %>
+</body>
+</html>

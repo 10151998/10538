@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sender team:</b>
+  <%= @team_challenge.sender_team_id %>
+</p>
+
+<p>
+  <b>Receiver team:</b>
+  <%= @team_challenge.receiver_team_id %>
+</p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @team_challenge.datetime %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @team_challenge.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_challenge_path(@team_challenge) %> |
+<%= link_to 'Back', team_challenges_path %>

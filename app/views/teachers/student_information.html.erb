@@ -1,0 +1,8 @@
+<h1>Student Information</h1>
+
+  <div><%= @team.name %></div>
+  <% if @teammate != nil %>
+    <div><%= @teammate.firstname + "." + @teammate.lastname %></div>
+  <% end %>
+  <div><%= @team.sport.name %></div>
+  <div><%= @team.sport_level.name %></div>

@@ -1,0 +1,7 @@
+<% @videos.each do |video| %>
+  Sport: <%= video.sport.name %></br>
+  From: <%= video.trainer.username %></br>
+  <%= video.updated_at %></br>
+  <% src = "http://theactivegeneration.s3.amazonaws.com/videos/" + "#{video.id}" + "/original/" + "#{video.video_file_name}" %>
+  <embed src=<%=src%> /></br>
+<% end %>

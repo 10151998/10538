@@ -1,0 +1,2 @@
+module UserFunsHelper
+end

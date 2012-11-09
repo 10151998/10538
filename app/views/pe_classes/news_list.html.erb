@@ -1,0 +1,13 @@
+<h1>Listing News</h1>
+
+  <% @activities.reverse.each do |activity| %>
+     <% if activity.instance_of?(Music) %>
+     <%= activity.user.firstname %>.<%= activity.user.lastname %> recommend music "<%= activity.name %>" from <%= activity.artist %> -- <%= activity.created_at %></br>
+     <% end %>
+     <% if activity.instance_of?(MusicLike) %>
+     <%= activity.user.firstname %>.<%= activity.user.lastname %> like music "<%= activity.music.name %>"  from <%= activity.music.artist %> -- <%= activity.created_at %></br>
+     <% end %>
+     <% if activity.instance_of?(UserFun) %>
+     <%= activity.user.firstname %>.<%= activity.user.lastname %> register fun event <%= activity.fun.name %> -- <%= activity.created_at %></br>
+     <% end %>
+  <% end %>

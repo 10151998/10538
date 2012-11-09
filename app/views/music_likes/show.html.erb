@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Music:</b>
+  <%= @music_like.music_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @music_like.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_music_like_path(@music_like) %> |
+<%= link_to 'Back', music_likes_path %>

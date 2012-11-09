@@ -1,0 +1,2 @@
+module PractiseHelper
+end

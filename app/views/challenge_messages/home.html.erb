@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag "application" %>
+
+  </head>
+  <body> 
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Schedule</a></li>
+        <li><a href="#tab2" data-toggle="tab">Inbox</a></li>
+        <li><a href="#tab3" data-toggle="tab">Sent</a></li>
+      </ul>
+      <div class="tab-content" style="overflow: visible;">
+        <div class="tab-pane active" id="tab1"><br><br><br><p><%= render '/team_challenges/team_challenge_list' %></p></div>
+        <div class="tab-pane" id="tab2"><br><br><br><p><%= render '/challenge_messages/inbox_list' %></p></div>
+        <div class="tab-pane" id="tab3"><br><br><br><p><%= render '/challenge_messages/sentbox_list' %></p></div>
+      </div>
+    </div>
+  </body>
+</html>

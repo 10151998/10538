@@ -1,0 +1,2 @@
+module UserplacesPreferencesHelper
+end

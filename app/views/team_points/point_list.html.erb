@@ -1,0 +1,9 @@
+<h1>Team Points</h1>
+
+  <% @teams.each do |team|%>
+    <%= team.name %></br>
+    <% team_points = TeamPoint.find_all_by_team_id(team.id) %>
+    <% team_points.each do |team_point| %>
+      <%= team_point.point_of_week %></br>
+    <% end %>
+  <% end %>

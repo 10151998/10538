@@ -1,0 +1,33 @@
+<%= form_for(@pe_class) do |f| %>
+  <% if @pe_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pe_class.errors.count, "error") %> prohibited this pe_class from being saved:</h2>
+
+      <ul>
+      <% @pe_class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.datetime_select :datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.select(:school_id, options_for_select(@schools.collect {|school| [school.name, school.id]})) %></br> 
+  </div>
+  <div class="field">
+    <%= f.label :teacher %><br />
+    <%= f.select(:teacher_id, options_for_select(@teachers.collect {|teacher| ["#{teacher.firstname}" + "." + "#{teacher.lastname}", teacher.id]})) %></br> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

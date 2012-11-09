@@ -1,0 +1,13 @@
+  <div class="field">
+    From: <%= "#{Trainer.find(@mentor_message.sender_id).firstname}" + "#{Trainer.find(@mentor_message.sender_id).lastname}" %>
+  </div>
+  <div class="field">
+    Subject: <%= @mentor_message.subject %>
+  </div>  
+  <div class="field">
+    DateTime: <%= @mentor_message.updated_at %>
+  </div>
+  <div class="field">
+    Content: <%= @mentor_message.content %>
+  </div>
+  <%= link_to "reply", '/mentor_messages/new' %>

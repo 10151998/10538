@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "five_star_rate" %>
+    <script type="text/javascript" "jquery-countdown" ></script>
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+              <% team_name_array = Array.new(@teams.size) %>
+              <% team_point_of_week_array = Array.new(@teams.size){Array.new(@teams.size, 0)} %>
+              <% i = 0; j = 0 %>
+              <% @teams.each do |team|%>
+                <% team_name_array[i] = team.name %>
+                <% team_points = TeamPoint.find_all_by_id(@user) %>
+                <% if team_points != [] %>
+                  <% j = 0 %>
+                  <% team_points.each do |team_point| %>
+                    <% team_point_of_week_array[i][j] = team_point.point_of_week %>
+                    <% j = j + 1 %>
+                  <% end %>
+                  <% i = i + 1 %>
+                <% else %>
+                  <% j = 0 %>
+                  <% team_points.each do |team_point| %>
+                    <% team_point_of_week_array[i][j] = 0 %>
+                    <% j = j + 1 %>
+                  <% end %>
+                  <% i = i + 1 %>
+                <% end %>
+              <% end %>
+              <% n = 0; m = 0 %>
+              var data = google.visualization.arrayToDataTable([   
+                ['Week'<% for m in 0..i-1 %>, <%= "'" + team_name_array[m] + "'" %><% m = m + 1 %><% end %>],
+                <% for n in 0..j-1 %>
+                  ['<%= n+1 %>'
+                  <% for m in 0..i-1 %>, <%= team_point_of_week_array[m][n] %><% m = m + 1 %>
+                  <% end %>
+                  <% n = n + 1 %>],
+                <% end %>
+              ]);
+              var options = {
+                title: '',
+                width: 350, 
+                height: 150, 
+                chartArea: {left:0, top:20, width:"95%",height:"95%"},
+                backgroundColor: { fill: 'transparent' },
+                legend: {position: 'none'},
+              };
+
+              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+            }
+        </script>
+  </head>
+  <body>
+    <div id="students">
+        <div id="redcircle">
+            <table>
+              <tr>
+                <td width="37%">
+                <h2><strong><%= @user.firstname %></strong> | Log Out</h2>
+                </td>
+              </tr>
+              <tr class="spacer">
+                <td style="padding-top:5%">
+                  <% if @user.icon_filename != nil %>
+                    <%= image_tag("/assets/avatar/" + @user.icon_filename + ".png", :style => "height:300px; width:120px") %>
+                    <% else %>Choose an Avatar!
+                  <% end %>
+                </td>
+                <td valign="top">
+                  <h4>MY DASHBOARD</h4>
+                  <p><h5>Sport: <font color="black" style="normal"><%= UserSportPreference.find_by_user_id(current_user.id).sport.name %></font></h5></p>
+                  <p><h5>Level: <font color="black" style="normal"><% if @team != nil %><%= @team.sport_level.name %><% else %>0<% end %></font></h5></p>
+                  <p><h5>Weekly Tip: <font color="black" style="normal"><%= render '/sport_levels/guidence'%></font></h5></p>
+                  <p><h5>TAG Points: <font color="black" style="normal"><%= @user.totalSteps %></font></h5></p>
+                  <br>
+                  <p><h5><%= render '/teams/team_information'%>
+                  </br>
+                  <%= link_to "level up in your sport »", '/teams/levelup', :class => 'button' %></h5>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div id="stu_menu1"><a href="/teams/home">MY TEAM</a></div>
+        <div id="stu_menu2"><a href="/trainers">MY MENTORS</a></div>
+        <div id="stu_menu3"><a href="/funs/fun_list">EVENTS</a></div>
+        <div id="gallery">
+        <div align="center" id="gallery_frame">
+            <h6>CLASS SCOREBOARD & NEWS</h6>
+              <h8>Scoreboard</h3>
+                  <div class="span10">
+                  <div class="table">
+                  <div class="span5">
+                  <div class="row">
+                  <p><font color=#149bdf>Where do you stand?</font></p>
+                  <% if @teams != [] %> 
+                    <div id="chart_div" style="width: 350px; height: 180px;"></div>
+                  <% else %>
+                    chart of class will be coming soon :)
+                  <% end %>
+               <h8>Team list:</h8>
+                  <style="margin-left:15px;"><%= render '/teams/team_information_list'%></style>
+                  <br>
+              <h8 style="padding-bottom:15px;">Updates:</h8>
+                  <%= render '/pe_classes/news_list'%>
+                  
+            <table align="center">
+                 <tr>
+                   <td><%= link_to "upcoming events »", '/funs/search_fun', :class => 'button' %></td>
+                   <td><%= link_to "view class playlist »", '', :class => 'button' %></td>
+                 </tr>
+           </table>
+        </div>
+    </div>
+  </body>
+</html>

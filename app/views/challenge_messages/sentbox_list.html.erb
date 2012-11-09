@@ -1,0 +1,14 @@
+<h1>Sent Box List</h1>
+
+  <% @challenge_messages.each do |challenge_message| %>
+
+    <% if challenge_message.message_type == 0 %>
+      Your team invite team:<%= Team.find(challenge_message.receiver_team_id).name %> to join a challenge game.</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+    <% else %>
+      Your team is not avalable at the time team:<%= Team.find(challenge_message.receiver_team_id).name %> suggested, so you suggest:</br>
+      datetime: <%= challenge_message.datetime %></br>
+      location: <%= challenge_message.location %></br>
+    <% end %>
+  <% end %>

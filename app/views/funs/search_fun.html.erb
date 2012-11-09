@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Fun</title>  
+    <%= stylesheet_link_tag "search", :media => "all" %>
+    <%= stylesheet_link_tag "gmaps4rails", :media => "all" %>    
+    <%= javascript_include_tag "gmaps4rails.base.js.coffee" %>
+    <%= javascript_include_tag "gmaps4rails.bing.js.coffee" %>
+    <%= javascript_include_tag "gmaps4rails.googlemaps.js.coffee" %>
+    <%= javascript_include_tag "gmaps4rails.mapquest.js.coffee" %>
+    <%= javascript_include_tag "gmaps4rails.openlayers.js.coffee" %>
+  </head>
+
+  <body>
+    <div id = "fun">
+      <div id = "left_select">
+        <%= render 'games/index' %>
+      </div>
+    </div>
+    <div id = "fun_location">
+      <div id = "right_map">
+        <%= render 'fun_locations/index' %>
+      </div>
+    </div>
+  </body>
+</html>

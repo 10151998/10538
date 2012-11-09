@@ -1,0 +1,6 @@
+<h1>Listing Students</h1>
+
+  <% @users.each do |user| %>
+    <div><%= user.firstname + "." + user.lastname %>
+    <%= link_to "Information", {:controller => "teachers", :action => "student_information", :user_id => user.id} %></div>
+  <% end %>

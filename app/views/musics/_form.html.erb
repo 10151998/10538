@@ -1,0 +1,11 @@
+<% if flash.now %>
+  <%= flash[:notice] %></br>
+<% end %>
+
+<%= form_for(@music) do |f| %>
+    <div><%= f.label :name %>
+    <%= f.text_field :name %></div></br>
+    <div><%= f.label :artist %>
+    <%= f.text_field :artist %></div></br>
+    <div><%= f.submit %></div>
+<% end %>

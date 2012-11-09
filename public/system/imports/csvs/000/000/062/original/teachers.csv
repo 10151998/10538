@@ -1,0 +1,2 @@
+id,firstname,lastname,gender,email,telephone,school_id,salt,hashed_password,active_code,created_at,updated_at
+1,a,a,a,a,a,NULL,702146575736600.821512486978415,9068d5ac3bfaf8ae0bcd3ef9d62a29,NULL,"2012-07-10 14:27:47","2012-07-10 14:27:47"

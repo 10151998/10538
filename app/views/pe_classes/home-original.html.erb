@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript" "jquery-countdown" ></script>
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        <% team_name_array = Array.new(@teams.size) %>
+        <% team_point_of_week_array = Array.new(@teams.size){Array.new(@teams.size, 0)} %>
+        <% i = 0; j = 0 %>
+        <% @teams.each do |team|%>
+          <% team_name_array[i] = team.name %>
+          <% team_points = TeamPoint.find_all_by_team_id(team.id) %>
+          <% if team_points != [] %>
+            <% j = 0 %>
+            <% team_points.each do |team_point| %>
+              <% team_point_of_week_array[i][j] = team_point.point_of_week %>
+              <% j = j + 1 %>
+            <% end %>
+            <% i = i + 1 %>
+          <% else %>
+            <% j = 0 %>
+            <% team_points.each do |team_point| %>
+              <% team_point_of_week_array[i][j] = 0 %>
+              <% j = j + 1 %>
+            <% end %>
+            <% i = i + 1 %>
+          <% end %>
+        <% end %>
+        <% n = 0; m = 0 %>
+        var data = google.visualization.arrayToDataTable([   
+          ['Week'<% for m in 0..i-1 %>, <%= "'" + team_name_array[m] + "'" %><% m = m + 1 %><% end %>],
+          <% for n in 0..j-1 %>
+            ['<%= n+1 %>'
+            <% for m in 0..i-1 %>, <%= team_point_of_week_array[m][n] %><% m = m + 1 %>
+            <% end %>
+            <% n = n + 1 %>],
+          <% end %>
+        ]);
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="span10">
+      <div class="table">
+        <div class="span5">
+          <div class="row">
+            <p><font color=#149bdf>Score board:</font></p>
+            <% if @teams != [] %> 
+              <div id="chart_div" style="width: 350px; height: 200px;"></div>
+            <% else %>
+              chart of class will be coming soon :)
+            <% end %>
+          </div>
+          <div class="row">
+            <p><font color=#149bdf>Team list:</font></p>
+            <%= render '/teams/team_information_list'%>
+          </div>
+        </div>
+        <div class="span4">
+          <p><font color=#149bdf>Updates:</font></p>
+          <%= render '/pe_classes/news_list'%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

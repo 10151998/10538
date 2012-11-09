@@ -1,0 +1,11 @@
+order	file name		function
+1	sessions/new		user_sign_in
+2	registrations/new	user_sign_up
+3	users/set_account	confirm information and set account
+4	teams/search_team	matching for team
+5	users/home		old fun page (can show more information for user)
+6	teams/home		team home page
+7	pe_classes/home		class home page
+8	users/profile		profile home page
+9	musics/home		music home page
+10	challenge_messages/home	message home page

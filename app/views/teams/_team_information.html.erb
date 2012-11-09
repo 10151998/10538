@@ -1,0 +1,11 @@
+<% if @team != nil %>
+	<p><h7><strong>TEAM:</strong></h7> <i><font color=black><%= @team.name %></font></i></p>
+	<p><h7>Partner:</h7> <i><font color=black>
+	  <% if @teammate == nil %>
+    		Invite a classmate to join!
+	  <% else %>
+	    <%= @teammate.firstname + " " + @teammate.lastname %><br>
+  	  <% end %>
+	<% else %>
+	    Your team information will display here after you join.
+<% end %></font></i></p>

@@ -1,0 +1,13 @@
+  <% @teams.each do |team| %>
+    <i class="icon-leaf"></i>
+    <div>Team name: <%= team.name %></div>
+    <div style="margin-bottom:15px;">Sport: <%= team.sport.name.capitalize %></div>
+    <a class="button-challenge" href="/challenge_messages/new_invite/?id=<%=team.id%>">
+      <i class="icon-fire icon-white"></i>
+      Challenge
+    </a>
+
+    <% if flash.keep(:notice_challenge_constrain) %>
+      <%= flash[:notice_challenge_constrain] %>
+    <% end %></br>
+  <% end %>

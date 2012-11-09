@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idpeclasses: 1
+  idusers: 1
+
+two:
+  idpeclasses: 1
+  idusers: 1

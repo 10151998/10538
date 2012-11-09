@@ -1,0 +1,29 @@
+<%= form_for @import, :html => { :multipart => true } do |f| %>
+  <%= f.file_field :csv %>
+  <select name="import[datatype]" size="1">
+    <option value="users" > users </option>
+    <option value="schools" > schools </option>
+    <option value="pe_classes" > pe_classes </option>
+    <option value="teachers" > teachers </option>
+    <option value="trainers" > trainers </option>
+    <option value="sports" > sports </option>
+    <option value="sport_levels" > sport_levels </option>
+    <option value="games" > games </option>
+    <option value="funs" > funs </option>
+    <option value="fun_locations" > fun_locations </option>
+    <option value="levels" > levels </option>
+  </select>
+  <%= f.submit "Import" %></br>
+
+  user: <%= link_to "new", '/users/new' %> <%= link_to "index", '/users' %></br>
+  school: <%= link_to "new", '/schools/new' %> <%= link_to "index", '/schools' %></br>
+  pe_class: <%= link_to "new", '/pe_classes/new' %> <%= link_to "index", '/pe_classes' %></br>
+  teacher: <%= link_to "new", '/teachers/new' %> <%= link_to "index", '/teachers' %></br>
+  trainer: <%= link_to "new", '/trainers/new' %> <%= link_to "index", '/trainers' %></br>
+  sport: <%= link_to "new", '/sports/new' %> <%= link_to "index", '/sports' %></br>
+  sport_level: <%= link_to "new", '/sport_levels/new' %> <%= link_to "index", '/sport_levels' %></br>
+  game: <%= link_to "new", '/games/new' %> <%= link_to "index", '/games' %></br>
+  fun: <%= link_to "new", '/funs/new' %> <%= link_to "index", '/funs' %></br>
+  fun_location: <%= link_to "new", '/fun_locations/new' %> <%= link_to "index", '/fun_locations/index_admin' %></br>
+  level: <%= link_to "new", '/levels/new' %> <%= link_to "index", '/levels' %></br>
+<% end %>

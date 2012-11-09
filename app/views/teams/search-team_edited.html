@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag "signup" %>
+        <style type="text/css">
+        .span2 {
+          visibility: hidden;
+        }
+    </style>
+  </head>
+  <body>
+    <%= form_tag('/teams/search_team') do %>
+     <div class="content">
+      <div class="row">
+        <h2>Choose a Sport</h2>
+        <table align="center">
+          <tr>
+            <td><%= image_submit_tag "sport/baseball.png", :name => "commit", :value => "1", :style => "height:70px; width:70px; float:left;" %></td>
+            <td><%= image_submit_tag "sport/basketball.png", :name => "commit", :value => "2", :style => "height:70px; width:70px; float:left;" %></td>
+            <td><%= image_submit_tag "sport/football.png", :name => "commit", :value => "3", :style => "height:70px; width:70px; float:left;" %></td>
+            <td><%= image_submit_tag "sport/soccer.png", :name => "commit", :value => "4", :style => "height:70px; width:70px; float:left;" %></td>
+            <td><%= image_submit_tag "sport/dance.png", :name => "commit", :value => "5", :style => "height:70px; width:70px; float:left;" %></td>
+            <td><%= image_submit_tag "sport/karate.png", :name => "commit", :value => "6", :style => "height:70px; width:70px; float:left;" %></td>
+          </tr>
+          <tr>
+            <td>Baseball</td>
+            <td>Basketball</td>
+            <td>Football</td>
+            <td>Soccer</td>
+            <td>Dance</td>
+            <td>Karate</td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <h2>Select your level</h2>
+        <%= select_tag(:level_id, options_for_select(@levels.collect {|level| [level.name, level.id]})) %></br>  
+        <%= submit_tag "select", :class => "btn", :name => "commit", :value => "Select" %>
+      </div>
+      <div class="row">
+        <h2>Join a Team</h2>
+        <div>
+          <% if @teams != nil %>
+            <h4>same sport and level</h4>
+            <% @teams.each do |team| %>
+              Name: <%= team.name %><br>
+              Sport: <%= team.sport.name %><br>
+              Level: <%= team.level.name %><br>
+              <%= image_tag("/assets/avatar/" + Teammember.find_by_team_id(team.id).user.icon_filename + ".png", :style => "height:40px") %><br>
+              Gender : <%= Teammember.find_by_team_id(team.id).user.gender %><br>
+              <%= submit_tag "join", :class => "btn", :name => "join[#{team.id}]" %><br>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <% if flash[:notice_search_result] or @teams1 == nil %>
+            <% if flash[:notice_search_result] %>
+              <div class="alert alert-error">
+                <%= flash[:notice_search_result] %> 
+              </div>
+            <% end %>
+          <% else %>
+            <h4>same sport</h4>
+            <% @teams1.each do |team| %>
+              Name: <%= team.name %><br>
+              Sport: <%= team.sport.name %><br>
+              Level: <%= team.level.name %><br>
+              <%= image_tag("/assets/avatar/" + Teammember.find_by_team_id(team.id).user.icon_filename + ".png", :style => "height:40px") %><br>
+              Gender : <%= Teammember.find_by_team_id(team.id).user.gender %><br>
+              <%= submit_tag "join", :name => "join[#{team.id}]" %><br>
+            <% end %>
+          <% end %>
+        </div>
+      <%= link_to "Please create your own team.", '/teams/new' %><br>
+      <%= submit_tag "next", :class => "btn", :name => "commit", :value => "Next" %>
+    <% end %>
+  </div>
+  </body>
+</html>

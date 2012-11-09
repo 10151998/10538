@@ -1,0 +1,2 @@
+module UserGamePreferencesHelper
+end

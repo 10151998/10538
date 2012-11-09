@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idusers: 1
+  idevents: 1
+  quater: MyString
+
+two:
+  idusers: 1
+  idevents: 1
+  quater: MyString

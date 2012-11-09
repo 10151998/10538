@@ -1,0 +1,8 @@
+<%= form_for(user_fun) do |f| %>
+  <% funs.each do |fun| %>
+    <div><%= fun.datetime %></div>
+    <div>popularity:<%= fun.popularity %></div>
+    <%= submit_tag 'register', :name => "register[#{fun.id}]" %>
+    <%= link_to "Fun Information", {:controller => "funs", :action => "fun_information", :fun_id => fun.id} %></div>
+  <% end %>
+<% end %>

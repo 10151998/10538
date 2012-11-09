@@ -1,0 +1,6 @@
+<h1>Listing levels</h1>
+
+  <% @sport_levels.each do |sport_level| %>
+      <div><%= sport_level.name %>
+      <%= link_to "More Information", {:controller => "sport_levels", :action => "home", :sport_level_id => sport_level.id} %></div>
+  <% end %>

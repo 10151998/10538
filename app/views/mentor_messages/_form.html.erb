@@ -1,0 +1,33 @@
+<%= form_for(@mentor_message) do |f| %>
+
+  <% if flash[:alert_receiver_id] or flash[:alert_subject] or flash[:alert_content] %>
+    <div class="alert alert-error">
+      <% flash.each do |key, value| %>
+        <div><%= value %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if current_user != nil %>
+    <div class="field">
+      <%= f.label :to %>
+      <% if @select_trainer == nil %>
+        <%= select_tag(:receiver_id, options_for_select(@trainers.collect {|trainer| ["#{trainer.firstname}" + "#{trainer.lastname}", trainer.id]}), :prompt => "select an athlete") %></br>  
+      <% else %>
+        <%= select_tag(:receiver_id, options_for_select(@trainers.collect {|trainer| ["#{trainer.firstname}" + "#{trainer.lastname}", trainer.id]}), :prompt => "#{Trainer.find(@select_trainer).firstname}" + "." + "#{Trainer.find(@select_trainer).lastname}") %></br>
+        <% @select_trainer = nil %>  
+      <% end %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= text_field_tag :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= text_area_tag :content, "create a message here...", :cols=>20,:rows=>5 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag "bootstrap" %>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= image_tag("White_Logo_6-22.png", :alt => "TAG", :style => "height:40px; float:left;") %>
+          <ul>
+            <li><a>SETUP YOUR ACCOUNT</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="row">
+        <div class="span12">
+          <h1>Let's get started!</h1>
+          <p style="font-family: 'Rockwell'; color: white; font-size: 16px; text-shadow: 2px 2px #000; line-height: 25px;">
+            Based on your registered username, <b><%= @user.username %></b>, these are our records:</br></br>
+            <b>Name: </b>
+            <%= @user.firstname + " " + @user.lastname %></br>
+            <b>School Info: </b>
+            <%= @user.pe_class.name %>, <%= @user.pe_class.school.name %>
+          </p><br>
+          <div class="Parental Consent" style="width:60%;">
+            <%= render 'confirm_parental_consent'%>
+      	  </div>
+        </div>
+      </div>
+    </div>
+    <%= image_tag("guyTAGgradient.png", :id => 'background-img', :class => "bg") %>
+    	
+    <div class="clearfooter"></div>
+    <div class="footer">
+      <p>&copy; The Active Generation 2012</p>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>

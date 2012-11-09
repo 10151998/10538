@@ -1,0 +1,2 @@
+module ChallengeMessagesHelper
+end

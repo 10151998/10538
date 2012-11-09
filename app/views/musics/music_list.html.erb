@@ -1,0 +1,11 @@
+<h1>Listing musics</h1>
+
+<%= form_tag('music_list') do %>
+  <% @musics.each do |music| %>
+    <div><%= music.name %></div>
+    <div><%= music.artist %></div>
+    <div><%= music.popularity %></div>
+    <div><%= submit_tag "like", :name => "like[#{music.id}]" %></div>
+  <% end %>
+  <div><%= link_to "Recommend Music", '/musics/new' %></div>
+<% end %>

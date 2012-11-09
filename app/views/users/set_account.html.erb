@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style type="text/css">
+        .span2 {
+          visibility: hidden;
+        }
+    </style>
+  </head>
+    <body>
+      <div class="content">
+          <%= form_tag('/users/set_account') do %>
+
+          <% if flash[:alert_step] or flash[:alert_avatar] or flash[:alert_parental_consent] %>
+            <div class="alert alert-error">
+              <% flash.each do |key, value| %>
+                <div><%= value %></div>
+              <% end %>
+            </div>
+          <% end %>
+        <div class="row" align="center">
+          <h2>MY PROFILE</h2>
+          <br>
+          <table align="center">
+          <tr>
+            <td>
+              <p><strong>Username:</strong> <%= @user.username %></p>
+              <p><strong>Name:</strong> <%= @user.firstname + " " + @user.lastname %></p>
+              <p><strong>Gender:</strong> <%= @user.gender %></p>
+              <p><strong>Email:</strong> <%= @user.email %></p>
+            </td>
+            <td style="padding-left:20px;">
+              <p><strong>Class:</strong> <%= @user.pe_class.name %></p>
+              <p><strong>Teacher:</strong> <%= @user.pe_class.teacher.lastname %></p>
+              <p><strong>School:</strong> <%= @user.pe_class.school.name %></p>
+            </td>
+          </tr>
+        </table>
+          <div align="center">
+            <h2>Choose an Avatar</h2>
+            <%= image_submit_tag "avatar/1.png", :name => "commit", :value => "1", :style => "height:180px; width:85px;" %>
+            <%= image_submit_tag "avatar/6.png", :name => "commit", :value => "2", :style => "height:180px; width:85px;" %>
+            <%= image_submit_tag "avatar/3.png", :name => "commit", :value => "3", :style => "height:180px; width:55px;" %>
+            <%= image_submit_tag "avatar/4.png", :name => "commit", :value => "4", :style => "height:180px; width:95px;" %>
+            <%= image_submit_tag "avatar/5.png", :name => "commit", :value => "5", :style => "height:180px; width:75px;" %>
+            <%= image_submit_tag "avatar/2.png", :name => "commit", :value => "6", :style => "height:180px; width:115px;" %>
+          </div>
+        </div>
+        <div class="row" align="center">
+        <h2>Setup Your Sensor</h2>
+          <div>
+          <p>My Goal: <%= select_tag "step", "<option>Select 2012-2013 Steps Goal</option><option>100000</option><option>200000</option><option>300000</option><option>400000</option>".html_safe %></p>
+          </div>
+        </div>
+        <div class="row" align="center" style="margin-top:-30px;">
+        <h2>Confirm Parental Consent</h2>
+          <div>
+          <%= check_box_tag 'parental_consent', 'yes' %>My Parent/Guardian has signed my Parental Consental Form and given me permission to access TAG's portal.
+          </div>
+          </br>
+        <button class="btn" type="submit">SUBMIT</button>
+      </div> 
+    </div>
+    <% end %>
+  </body>
+</html>

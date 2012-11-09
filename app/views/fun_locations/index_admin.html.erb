@@ -1,0 +1,22 @@
+<h1>Listing locations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+  </tr>
+
+<% @fun_locations.each do |fun_location| %>
+  <tr>
+    <td><%= fun_location.name %></td>
+    <td><%= fun_location.address %></td>
+    <td><%= fun_location.longitude %></td>
+    <td><%= fun_location.latitude %></td>
+    <td><%= link_to 'Show', fun_location %></td>
+    <td><%= link_to 'Edit', edit_fun_location_path(fun_location) %></td>
+    <td><%= button_to 'Destroy', fun_location, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

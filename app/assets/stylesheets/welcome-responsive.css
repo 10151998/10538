@@ -1,0 +1,472 @@
+    @media (max-width: 480px) {
+      #container {
+        height: 550px;
+        width: 100%;
+      }
+      #container h1 {
+        font-size: 30px;
+        margin-left: 8%;
+      }
+      #logo ul {
+        visibility: hidden;
+      }
+      #video {
+        visibility: hidden;
+      }
+      #featured, #press {
+        width: 85%;
+        height: 220px;
+        margin: 0; 
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+      #featured #content {
+        min-width: 95%;
+        display: block;
+        float: none;
+        margin-left: 0;
+      }
+      #featured h1, #press h1 {
+        font-size: 25px;
+        text-align: left;
+        margin-left: 0;
+      }
+      #featured h2{
+        font-size: 20px;
+      }
+      #featured a.btn {
+        text-decoration: none;
+        display: inline-block;
+        *display: inline-block;
+        padding: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        *margin-left: .3em;
+        font-size: 18px;
+        font-family: "Cabin", "Tahoma", sans-serif;
+      }
+      #students {
+        width:92%;
+        height: 250px;
+        margin-bottom: 20px;
+      }
+      #redcircle {
+        height: 400px;
+        width: 400px;
+        text-align: left;
+        color: white;
+        border-radius: 400px;
+        margin: 0;
+        margin-left: -12%;
+        margin-top: -13.5%;
+        box-shadow: 2px 3px 18px #5E2612;
+      }
+      #redcircle h2 {
+        padding-top: 22%;
+        padding-left: 20%;
+        font-size: 20px;
+      }
+      #redcircle ul {
+        padding-left: 30%;
+        padding-right: 10%;
+        font-size: 15px;
+      }
+      #programdetails {
+        width:85%;
+        padding: 14px;
+        margin-bottom: 25px;
+      }
+      #programdetails h1 {
+        font-size: 25px;
+        margin-left: 0;
+      }
+      #programdetails h2 {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      #programdetails h3 {
+        margin-top: 50px;
+      }
+      #pedometer {
+        height: 20%;
+      }
+      #usb {
+        height: 7%;
+      }
+      #comp {
+        height: 100px;
+        margin-bottom: -100px;
+      }
+      #Screenshots {
+        height: 60px;
+        width: 105px;
+        margin-top: 0;
+      }
+      #mentors img {
+        width: 50px;
+        margin: 0;
+        padding: 0;
+        margin-right: 15px;
+        margin-bottom: 20px;
+      }
+      #press {
+        width: 89%;
+        height: 150px;
+        margin-right: 0;
+        padding-right: 0;
+      }
+      #press h2 {
+        font-size: 18px;
+      }
+      #press h3 {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+      }
+      #etching {
+        visibility: hidden;
+        margin-bottom: -17%;
+      }
+      #press-table {
+        display: inline-block;
+        float: none;
+      }
+      #geomd-cell {
+        width: 20%;
+        height: 400px;
+      }
+      #geomd {
+        height: 10%;
+      }
+      #press h3 {
+        font-size: 12px;
+      }
+      #socialchange-cell {
+        width: 30%;
+        text-align: left;
+      }
+      #socialchange {
+        height: 120px;
+        width: auto;
+      }
+    }
+    @media (min-width: 480px) and (max-width: 639px) {
+      #container {
+        height: 550px;
+        width: 100%;
+      }
+      #container h1 {
+        font-size: 30px;
+        margin-left: 8%;
+      }
+      #logo ul {
+        visibility: hidden;
+      }
+      #featured, #press {
+        width: 85%;
+        height: 200px;
+        margin: 0; 
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+      #featured #content {
+        min-width: 95%;
+        display: block;
+        float: none;
+        margin-left: 0;
+      }
+      #featured h1, #press h1 {
+        font-size: 25px;
+        text-align: left;
+        margin-left: 0;
+      }
+      #featured h2 {
+        font-size: 18px;
+      }
+      #video {
+        visibility: hidden;
+      }
+      #featured a.btn {
+        text-decoration: none;
+        display: inline-block;
+        *display: inline-block;
+        padding: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        *margin-left: .3em;
+        font-size: 18px;
+        font-family: "Cabin", "Tahoma", sans-serif;
+      }
+      #students {
+        width:90.5%;
+        height: 250px;
+        margin-bottom: 20px;
+      }
+      #redcircle {
+        height: 400px;
+        width: 400px;
+        text-align: left;
+        color: white;
+        border-radius: 400px;
+        margin: 0;
+        margin-left: -12%;
+        margin-top: -13.5%;
+        box-shadow: 2px 3px 18px #5E2612;
+      }
+      #redcircle h2 {
+        padding-top: 22%;
+        padding-left: 20%;
+        font-size: 20px;
+      }
+      #redcircle ul {
+        padding-left: 30%;
+        padding-right: 10%;
+        font-size: 15px;
+      }
+      #programdetails {
+        width:85%;
+        padding: 14px;
+        margin-bottom: 25px;
+        font-family: "Cabin", "Tahoma", sans-serif;
+      }
+      #programdetails h1 {
+        font-size: 25px;
+        margin-left: 0;
+      }
+      #programdetails h2 {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      #programdetails h3 {
+        margin-top: 50px;
+        font-family: "Cabin", "Tahoma", sans-serif;
+      }
+      #pedometer {
+        height: 20%;
+      }
+      #usb {
+        height: 7%;
+      }
+      #comp {
+        height: 100px;
+        margin-bottom: -100px;
+      }
+      #Screenshots {
+        height: 60px;
+        width: 105px;
+        margin-top: 0;
+      }
+      #mentors img {
+        width: 80px;
+        margin-right: 20px;
+      }
+      #press {
+        height: 150px;
+      }
+      #press h2 {
+        font-size: 18px;
+      }
+      #press h3 {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+      }
+      #geomd {
+        height: 15%;
+      }
+      #socialchange {
+        width: 300px;
+        height: 125px;
+      }
+    }
+
+    @media (min-width: 640px)and (max-width: 1000px) {
+      #container h1 {
+        font-size: 27px;
+      }
+      #featured {
+        padding-left: 28px;
+      }
+      #featured #content {
+        padding: 0;
+        padding-right: 10px;
+      }
+      #featured h1 {
+        margin-bottom: 5px;
+      }
+      #featured h2 {
+        font-size: 20px;
+      }
+      #featured a.btn {
+        padding: 5px;
+        font-size: 20px;
+      }
+      #redcircle {
+        height: 550px;
+        width: 550px;
+        text-align: left;
+        color: white;
+        border-radius: 550px;
+        margin: 0;
+        margin-left: -12%;
+        margin-top: -13.5%;
+        box-shadow: 2px 3px 18px #5E2612;
+      }
+      #redcircle h2 {
+        padding-top: 25%;
+        padding-left: 23%;
+        font-size: 23px;
+      }
+      #redcircle ul {
+        padding-left: 30%;
+        padding-right: 10%;
+        font-size: 20px;
+      }
+      #programdetails {
+        width:91.5%;
+        padding: 14px;
+        margin-bottom: 25px;
+      }
+      #programdetails h1 {
+        font-size: 25px;
+        margin-left: 0;
+      }
+      #programdetails h2 {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      #programdetails h3 {
+        margin-top: 65px;
+      }
+      #pedometer {
+        height: 30%;
+      }
+      #usb {
+        height: 15%;
+      }
+      #comp {
+        height: 150px;
+        margin-bottom: -150px;
+      }
+      #Screenshots {
+        height: 85px;
+        width: 155px;
+        margin-top: 8px;
+      }
+      #mentors img {
+        width: 120px;
+        margin-right: 25px;
+      }
+      #press {
+        width:86%;
+      }
+      #geomd {
+        height: 20%;
+      }
+      #socialchange {
+        width: 300px;
+        height: 125px;
+      }
+      #press h3 {
+        text-align: left;
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0;
+        margin-left: 10%;
+      }
+    }
+
+    @media (min-width: 1001px) and (max-width: 1134px) {
+      #container h1 {
+        font-size: 30px;
+      }
+      #featured h1 {
+        margin-bottom: 5px;
+      }
+      #featured h2 {
+        font-size: 22px;
+      }
+      #students h2 {
+        padding-top: 25%;
+        padding-left: 25%;
+      }
+      #students ul {
+        padding-left: 30%;
+        padding-right: 10%;
+      }
+      #pedometer {
+        height: 50%;
+      }
+      #usb {
+        height: 13%;
+      }
+      #comp {
+        height: 250px;
+        margin-bottom: -250px;
+      }
+      #Screenshots {
+        height: 145px;
+        width: 260px;
+        margin-top: 10px;
+      }
+      #press h3 {
+        text-align: left;
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0;
+        margin-left: 10%;
+      }
+    }
+
+    @media (min-width: 1135px) {
+      #featured {
+        padding-right: 33px;
+      }
+      #students {
+        width: 94.5%;
+      }
+    #students h2 {
+    padding-top: 30%;
+    padding-left: 28%;
+    }
+    #students ul {
+    padding-left: 30%;
+    padding-right: 10%;
+    } 
+      #programdetails {
+        width: 91.5%;
+      }
+      #press {
+        width: 89%;
+        padding-right: 28px;
+      }      
+      #pedometer {
+        height: 60%;
+      }
+      #usb {
+        height: 18%;
+      }
+      #comp {
+        height: 250px;
+        margin-bottom: -250px;
+      }
+      #Screenshots {
+        height: 148px;
+        width: 260px;
+        margin-top: 12px;
+      }
+      #press h3 {
+        text-align: left;
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0;
+        margin-left: 10%;
+      }
+    }

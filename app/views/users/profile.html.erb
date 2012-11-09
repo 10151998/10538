@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div id="students">
+        <div id="redcircle">
+            <table>
+              <tr>
+                <td width="27%">
+                <h2><strong><%= @user.firstname %></strong> | Log Out<h2>
+                </td>
+              </tr>
+              <tr class="spacer">
+                <td style="padding-top:3.5%;">
+                  <% if @user.icon_filename != nil %>
+                    <%= image_tag("/assets/avatar/" + @user.icon_filename + ".png", :style => "height:300px; width:120px") %>
+                    <% else %>Choose an Avatar!
+                  <% end %>
+                </td>
+                <td valign="top">
+                  <h4>MY DASHBOARD</h4>
+                  <p><h5>Sport: <font color="black" style="normal"><%= UserSportPreference.find_by_user_id(current_user.id).sport.name %></font></h5></p>
+                  <p><h5>Level: <font color="black" style="normal"><% if @team != nil %><%= @team.level_id %><% else %>0<% end %></font></h5></p>
+                  <p><h5>Weekly Tip: <font color="black" style="normal"><%= render '/sport_levels/guidence'%></font></h5></p>
+                  <p><h5>TAG Points: <font color="black" style="normal"><%= @user.totalSteps %></font></h5></p>
+                  <br>
+                  <p><h5><%= render '/teams/team_information'%>
+                  </br>
+                  <%= link_to "level up in your sport »", '/teams/levelup', :class => 'button' %></h5>
+                  <br>
+                  <a href="/users/profile" style="color:black;font-style:bold;">My Profile</a>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div id="stu_menu1"><a href="/pe_classes/home">MY CLASS</a></div>
+        <div id="stu_menu2"><a href="/trainers">MY MENTORS</a></div>
+        <div id="stu_menu3"><a href="/funs/fun_list">EVENTS</a></div>
+        <div id="gallery">
+          <div align="center" id="gallery_frame">
+              <h6>Account Settings</h6><br>
+              <table class="table" style="font-size:12px;">  
+                <tbody>  
+                  <tr>
+                    <th>Avatar</th>
+                    <% if @user.icon_filename != nil %>
+                      <th><%= image_tag("/assets/avatar/" + @user.icon_filename + ".png", :style => "height:100px; width:40px") %><br></th>
+                    <% else %>
+                    <th>:)</th>
+                    <% end %>
+                    <th><%= link_to "Edit", '/users/render_update_avatar' %></th>
+                  </tr>
+                  <tr>
+                    <th>Username</th>
+                    <th><%= @user.username %></th>
+                    <th><%= link_to "Edit", '/users/render_update_username' %></th>
+                  </tr>
+                  <tr>
+                    <th>Password</th>
+                    <th>Hidden</th>
+                    <th><%= link_to "Edit", '/users/render_update_password' %></th>
+                  </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th><%= @user.firstname + " " + @user.lastname %></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>Gender</th>
+                    <th><%= @user.gender %></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>Email</th>
+                    <th><%= @user.email %></th>
+                    <th><%= link_to "Edit", '/users/render_update_email' %></th>
+                  </tr>
+                  <tr>
+                    <th>Email of Parent</th>
+                    <th><%= @user.email_parent %></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>School</th>
+                    <th><%= @user.pe_class.school.name %></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>Class</th>
+                    <th><%= @user.pe_class.name %></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>Background Image</th>
+                    <th><% if @user.image != nil %><%= image_tag @user.image.image(:thumb) %><% end %></th>
+                    <th><%= link_to "Edit", '/images/new' %></th>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>

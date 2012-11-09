@@ -1,0 +1,21 @@
+<table class="table">  
+  <tbody>  
+    <tr>
+      <th>Name</th>
+      <th>Sport</th>
+      <th></th>
+    </tr>
+    <% @trainers.each do |trainer| %>
+      <tr>
+        <th><% if trainer.icon_filename != nil %>
+                    <%= image_tag("/assets/avatar/" + trainer.icon_filename + ".png", :style => "height:100px; width:120px") %>
+                    <% else %>Choose an Avatar!
+                  <% end %>
+        </th>
+        <th><%= trainer.firstname + '.' + trainer.lastname %></th>
+        <th><%= trainer.sport.name %></th>
+        <th><%= link_to "message", :controller => 'mentor_messages', :action => 'home', :name => trainer %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fun_location.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @fun_location.address %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @fun_location.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @fun_location.latitude %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @fun_location.gmaps %>
+</p>
+
+
+<%= link_to 'Edit', edit_fun_location_path(@fun_location) %> |
+<%= link_to 'Back', fun_locations_path %>

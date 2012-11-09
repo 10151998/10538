@@ -1,0 +1,25 @@
+<h1>Listing pe_classmembers</h1>
+
+<table>
+  <tr>
+    <th>Idpeclasses</th>
+    <th>Idusers</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pe_classmembers.each do |pe_classmember| %>
+  <tr>
+    <td><%= pe_classmember.idpeclasses %></td>
+    <td><%= pe_classmember.idusers %></td>
+    <td><%= link_to 'Show', pe_classmember %></td>
+    <td><%= link_to 'Edit', edit_pe_classmember_path(pe_classmember) %></td>
+    <td><%= link_to 'Destroy', pe_classmember, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pe classmember', new_pe_classmember_path %>

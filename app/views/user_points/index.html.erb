@@ -1,0 +1,31 @@
+<h1>Listing user_points</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Point event</th>
+    <th>Point fun</th>
+    <th>Point music</th>
+    <th>Point video</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_points.each do |user_point| %>
+  <tr>
+    <td><%= user_point.user_id %></td>
+    <td><%= user_point.point_event %></td>
+    <td><%= user_point.point_fun %></td>
+    <td><%= user_point.point_music %></td>
+    <td><%= user_point.point_video %></td>
+    <td><%= link_to 'Show', user_point %></td>
+    <td><%= link_to 'Edit', edit_user_point_path(user_point) %></td>
+    <td><%= link_to 'Destroy', user_point, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User point', new_user_point_path %>

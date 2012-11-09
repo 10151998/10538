@@ -1,0 +1,50 @@
+Readme:
+
+1. Setup mysql:
+
+edit /config/database.yml
+migrate tables:
+$ rake db:migrate
+
+2. Create 1st admin:
+
+in local terminal, start rails console access:
+$ rails console
+
+create an admin:
+$ admin=Admin.new(:email=>'email_of_admin',:username=>'username_of_admin',:password=>'password_of_admin')
+
+$admin=Admin.new(:email=>'info@theactivegeneration.com', :username=>'TAGAdmin',:password=>'thanksgiving')
+$ admin.save
+
+$school=School.new(:name=>'Holy Angels',:address=>'315 Hillside Avenue',:city=>'Demarest',:state=>'New Jersey',:zipcode=>'07627')
+$school.save
+
+$teacher=Teacher.new(:email=>'info@theactivegeneration.com',:password=>'GoAngels',:username=>'kunrath',:firstname=>'Kim',:lastname=>'Unrath',:gender=>'female',:school_id=>'1')
+$teacher.save
+
+$pe_class=Pe_class.new(:name=>'PEClass_01',:school_id=>'1',:teacher_id=>'1')
+$pe_class.save
+
+$user=User.new(:email=>'alvin@gmail.com',:username=>'alvinc',:password=>'acorn',:firstname=>'Alvin',:lastname=>'Chipmunk',:email_parent=>'mrchip@gmail.com',:gender=>'female',:pe_class_id=>'1')
+$user.save
+
+$user=User.new(:email=>'charmaine@theactivegeneration.com',:username=>'charmainetangonan',:password=>'jingle89',:firstname=>'Charmaine',:lastname=>'Tangonan',:email_parent=>'cltangonan@gmail.com',:gender=>'female',:pe_class_id=>'1')
+$user.save
+
+exit rails console access:
+$ exit
+
+or in heroku, start remote console access:
+$ heroku console
+
+3. Upload data:
+1st group: schools -> teachers -> pe_classes -> users
+2nd group: sports -> trainers -> sport_levels
+3rd group: games -> fun_locations -> funs
+4th group: levels
+
+notes:
+follow the orders
+upload csv file -> check from 'index' page
+manage foreign keys carefully

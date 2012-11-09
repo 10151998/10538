@@ -1,0 +1,21 @@
+<h1>Listing mentor_messages</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mentor_messages.each do |mentor_message| %>
+  <tr>
+    <td><%= link_to 'Show', mentor_message %></td>
+    <td><%= link_to 'Edit', edit_mentor_message_path(mentor_message) %></td>
+    <td><%= link_to 'Destroy', mentor_message, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mentor message', new_mentor_message_path %>

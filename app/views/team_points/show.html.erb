@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= @team_point.team_id %>
+</p>
+
+<p>
+  <b>Point of week:</b>
+  <%= @team_point.point_of_week %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_point_path(@team_point) %> |
+<%= link_to 'Back', team_points_path %>

@@ -1,0 +1,6 @@
+<h1>Listing Funs by user</h1>
+
+  <% @user_funs.reverse.each do |user_fun| %>
+     <%= user_fun.user.firstname %>.<%= user_fun.user.lastname %> reigster "<%= user_fun.fun.name %>" -- <%= user_fun.created_at %>
+     <%= link_to 'Attend', {:controller => "user_funs", :action => "attend", :user_fun_id => user_fun.id} %></br>
+  <% end %>

@@ -1,0 +1,148 @@
+<head>
+	<style type="text/css">
+	#investor {
+	      background-color: white;
+	      box-shadow: 2px 3px 18px #5E2612;
+	      width: 88.5%;
+	      height: 6675px;
+	      padding: 20px;
+	      padding-left: 50px;
+	      text-shadow: none;
+	      margin-bottom: 50px;
+	    }
+	    #investor h1 {
+	      font-family: "Cabin", "Tahoma", sans-serif;;
+	      margin: 2px; 
+	      font-weight: 500;
+	      font-size: 30px;
+	      color: black;
+	      text-shadow: none;
+	      letter-spacing: -1px;
+	      margin-bottom: 10px;
+	    }
+	    #disclaimer {
+	      background-color: red;
+	      border: 5px solid #333;
+	      padding: 15px;
+	      height: auto;
+	      width: 80%;
+	      font-family: "Cabin", "Tahoma", sans-serif;;
+	      margin-bottom: 5px;
+	      font-size: 18px;
+	      letter-spacing: -0.5px;
+	      color: white;
+	      border-radius: 5px;
+	      -webkit-border-radius: 5px;
+	         -moz-border-radius: 5px;
+	    }
+	    #investor p {
+	      letter-spacing: 0px;
+	      margin: 0;
+	      margin-bottom: 10px;
+	    }
+	    .post img {
+	      width: 80%;
+	    }
+	    #slide-nav {
+	    	position: fixed;
+	    	right: 8%;
+	    	top: 40%;
+	    }
+	    #slide-nav a {
+	    	font-family: "Cabin", "Tahoma", sans-serif;;
+	    	letter-spacing: -0.5px;
+	    	font-size: 14px;
+	    	display: block;
+	    	padding: 21px 8px;
+	    	margin: 3px 3px;
+	    	background: red;
+	    	color: white;
+	    	text-align: center;
+	    	text-decoration: none;
+	    	border-radius: 70px;
+	    	-webkit-border-radius: 70px;
+	    	-moz-border-radius: 70px;
+	    }
+	    	
+	    #slide-nav a:hover {
+	    	background: #F0AB02;
+	    }
+	    .post {
+	        margin: 10px;
+	        float: left;
+	        width: 80%;
+	        height: 600px;
+	        background : #fff;
+	        padding-top: 50px;
+	    }​
+	 </style>
+</head>
+<body>
+	<div id="container">
+      <h1>THE ACTIVE GENERATION</h1>
+      <div id="investor">
+          <h1>Investor Relations</h1>
+          <div id="disclaimer"><p><strong>Disclaimer:</strong> These slides highlight the problem our team is focused to address, our solution & pilot program, and our vision for the future of P.E.</p>
+          	<p>Please feel free to reach out to our team for more information on our product, R&D efforts, and traction.<br/>Thank you for viewing our investors page!</p>
+          </div>
+          <div id="slide-nav">
+          	<a id="previous" href="#">UP</a>
+          	<a id="next" href="#">DOWN</a>
+          	<a id="email" style="background-color:black;">EMAIL</a>
+          </div>
+	      <div class="post"><img src="/assets/TAGslide1.png" style="padding-top:20px;"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide2.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide3.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide4.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide5.png"></div>
+	      <div class="post" style="height: auto;"><img src="/assets/TAGslide6.png"></div>
+	      <div class="post" style="height: auto;"><img src="/assets/TAGslide7.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide8.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide9.png"></div>
+	      <div class="post" style="height: 500px;"><img src="/assets/TAGslide10.png"></div>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+	    $(function() {
+
+	        function scroll(direction) {
+
+	            var scroll, i,
+	                    positions = [],
+	                    here = $(window).scrollTop(),
+	                    collection = $('.post');
+
+	            collection.each(function() {
+	                positions.push(parseInt($(this).offset()['top'],10));
+	            });
+
+	            for(i = 0; i < positions.length; i++) {
+	                if (direction == 'next' && positions[i] > here) { scroll = collection.get(i); break; }
+	                if (direction == 'prev' && i > 0 && positions[i] >= here) { scroll = collection.get(i-1); break; }
+	            }
+
+	            if (scroll) {
+	                $.scrollTo(scroll, {
+	                    duration: 750       
+	                });
+	            }
+
+	            return false;
+	        }
+
+	        $("#next,#prev").click(function() {        
+	            return scroll($(this).attr('id'));        
+	        });
+
+	        $(".scrolltoanchor").click(function() {
+	            $.scrollTo($($(this).attr("href")), {
+	                duration: 750
+	            });
+	            return false;
+	        });
+
+	    });
+    </script>
+  </body>
+</html>

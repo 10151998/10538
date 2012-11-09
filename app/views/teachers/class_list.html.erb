@@ -1,0 +1,7 @@
+<h1>Listing Classes</h1>
+
+  <% @pe_classes.each do |pe_class| %>
+    <div><%= pe_class.name %>
+    <%= link_to "Listing Students", {:controller => "teachers", :action => "student_list", :pe_class_id => pe_class.id} %>
+    <%= link_to "Listing Events", {:controller => "teachers", :action => "event_list", :pe_class_id => pe_class.id} %></div>
+  <% end %>

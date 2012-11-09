@@ -1,0 +1,30 @@
+<h1>Listing sport_levels</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>number</th>
+    <th>name</th>
+    <th>guidence</th>
+    <th>sport_id</th>
+    <th>sport</th>
+  </tr>
+
+<% @sport_levels.each do |sport_level| %>
+  <tr>
+    <th><%= sport_level.id %></th>
+    <th><%= sport_level.number %></th>
+    <th><%= sport_level.name %></th>
+    <th><%= sport_level.guidence %></th>
+    <th><%= sport_level.sport_id %></th>
+    <th><%= sport_level.sport.name %></th>
+    <td><%= link_to 'Show', sport_level %></td>
+    <td><%= link_to 'Edit', edit_sport_level_path(sport_level) %></td>
+    <td><%= button_to 'Destroy', sport_level, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sport', new_sport_level_path %>

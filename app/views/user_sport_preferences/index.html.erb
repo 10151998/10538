@@ -1,0 +1,17 @@
+<h1>Listing usersports_preferences</h1>
+
+<table>
+  <tr>
+    <th>Sports Name</th>
+  </tr>
+
+<% @sport.each do |sport| %>
+  <tr>
+    <td><%= sport.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Usersports preference', new_usersports_preference_path %>

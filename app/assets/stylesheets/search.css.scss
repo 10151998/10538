@@ -1,0 +1,18 @@
+
+/* left column: show views/sports/index */
+#left_select {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: lightblue;
+}
+
+/* right column: show views/locations/index */
+#right_map {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}

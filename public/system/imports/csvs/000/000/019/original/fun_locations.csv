@@ -1,0 +1,7 @@
+id,name,address,longitude,latitude,gmaps,created_at,updated_at
+1,"Central park, NY","Central park, NY",-73.9702,40.7746,1,"2012-07-30 22:29:00","2012-07-30 22:29:00"
+2,"Union Square, NY","Union Square, NY",-73.9911,40.7359,1,"2012-07-30 22:29:17","2012-07-30 22:29:17"
+3,"Time Square, NY","Time Square, NY",-73.9847,40.7597,1,"2012-07-30 22:29:27","2012-07-30 22:29:27"
+4,"Court Square, NY","Court Square, NY",-73.9424,40.7457,1,"2012-07-30 22:29:44","2012-07-30 22:29:44"
+5,"5th Ave 42nd Street, NY","5th Ave 42nd Street, NY",-73.9693,40.762,1,"2012-07-30 22:30:11","2012-07-30 22:30:11"
+6,"Broadway 195, NY","Broadway 195, NY",-74.0095,40.7108,1,"2012-07-30 22:30:32","2012-07-30 22:30:32"

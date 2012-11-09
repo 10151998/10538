@@ -1,0 +1,37 @@
+<%= form_for(@user_point) do |f| %>
+  <% if @user_point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_point.errors.count, "error") %> prohibited this user_point from being saved:</h2>
+
+      <ul>
+      <% @user_point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :point_event %><br />
+    <%= f.number_field :point_event %>
+  </div>
+  <div class="field">
+    <%= f.label :point_fun %><br />
+    <%= f.number_field :point_fun %>
+  </div>
+  <div class="field">
+    <%= f.label :point_music %><br />
+    <%= f.number_field :point_music %>
+  </div>
+  <div class="field">
+    <%= f.label :point_video %><br />
+    <%= f.number_field :point_video %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

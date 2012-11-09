@@ -1,0 +1,98 @@
+<html>
+  <body>
+    <div id="container">
+      <h1 id="etching">THE ACTIVE GENERATION</h1>
+      <div id="featured">
+        <div id="content">
+          <h1>Gym Class Re-envisioned.</h2>
+          <h2>Exciting & empowering students to lead healthier lives.</h2>
+          <p>TAG is giving students the ability to set goals & track their own physical activity, a teammate to encourage their success, and mentorship to help them aspire for greatness!</p>
+          <a href="/teams/home" class="btn" style="text-decoration:none; color:white;">LOGIN NOW</a>
+        </div>
+        <div id="video">
+          <video id="my_video_1" class="video-js vjs-default-skin" controls
+            preload="auto" width="420" height="264" data-setup="{}">
+            <source src="https://gust.com/r/videos/186050" type='video/mp4'>
+            <source src="https://gust.com/r/videos/186050" type='video/webm'>
+          </video>
+        </div>
+      </div>
+      <div id="students">
+        <div id="redcircle">
+          <h2>FOR STUDENTS, TAG OFFERS:</h2>
+          <ul>
+            <li>WEARABLE SENSOR: To set goals & track your own activity</li>
+            <li>ATHLETIC MENTORS: To guide your skills development across sports</li>
+            <li>CLASS CONNECTIVITY: To collaborate with your classmates anywhere</li>
+          </ul>
+        </div>
+        <div id="blackcircle"> </div>
+      </div>
+      <div id="programdetails">
+        <h1>THE PROGRAM:</h1>
+        <h2 style="font-size:17px;text-align:center;">Take your TAG ALONG, connect it your computer and upload your points directly to the site:</h2>
+            <table style="margin-top:10px;margin-left:35px;">
+              <tr>
+                <td width="15%" valign="middle"  align="center" style="margin:0;">
+                   <img id="pedometer" src="/assets/pedometer.png">
+                   <h2 style="valign:bottom">TAG WEARABLE SENSOR, VERSION 1.0</h2>
+                </td>
+                <td width="14%" valign="middle" align="center" style="margin:0;">
+                  <img id="usb" src="/assets/cord.png" style="padding-left:5px;">
+                </td>
+                <td width="30%" valign="bottom" align="center" style="margin:0;width:20%;">
+                  <img id="comp" src="/assets/iMAC-frame.png">
+                  <div id="Screenshots" class="carousel slide">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      <div class="active item"><img src="/assets/screenshot1.png"></div>
+                      <div class="item"><img src="/assets/screenshot2.png"></div>
+                      <div class="item"><img src="/assets/screenshot3.png"></div>
+                      <div class="item"><img src="/assets/screenshot4.png"></div>
+                    </div>
+                  </div>
+                  <h3>TAG PORTAL</h3>
+                </td>
+              </tr>
+            </table>
+        <h1 style="padding-bottom:10px;">THE MENTORS:</h1>
+        <div id="mentors">
+          <div align="center">
+          <img src="/assets/erin_headshot.png">
+          <img src="/assets/Evan_Morgan.jpg">
+          <img src="/assets/marcus_rance.jpg">
+          <img src="/assets/AlexLapes.png" style="margin-right:0px;">
+          <br>
+          <button><a href="/program" style="text-decoration:none; color:white;">FIND OUT MORE</a></button>
+          </div>
+      </div>
+    </div>
+    <div id="press">
+        <div style="display:table-row;">
+        <div id="geomd-cell" style="display:table-cell;vertical-align:top;">
+          <img id="geomd" src="/assets/OMD-and-GE-Incubator-Logo_no-background.gif">
+          <h3><i>Summer 2012 Incubatee</i></h3>
+        </div>
+        <div id="socialchange-cell" style="display:table-cell;vertical-align:top;">
+          <h2>Learn More:</h2>
+          <div id="LearnMore">
+           <a href="http://www.socialchange.is">
+            <img id="socialchange" src="/assets/SocialChangeBloggers.png"></a></div>
+            </div>
+          </div>
+      </div>
+      <div style="min-height:25px;">
+      </div>
+    </div>
+
+    <% javascript_include_tag 'bootstrap-carousel.js' %>
+    <script type="text/javascript">
+      $('.carousel').carousel('cycle')
+    </script>
+    <script type="text/javascript">
+      $(document).on("click", ".btn", function () {
+        $('#register').modal('show');
+      });
+    </script>
+  </body>
+</html>

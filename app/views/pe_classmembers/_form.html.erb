@@ -1,0 +1,25 @@
+<%= form_for(@pe_classmember) do |f| %>
+  <% if @pe_classmember.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pe_classmember.errors.count, "error") %> prohibited this pe_classmember from being saved:</h2>
+
+      <ul>
+      <% @pe_classmember.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :idpeclasses %><br />
+    <%= f.number_field :idpeclasses %>
+  </div>
+  <div class="field">
+    <%= f.label :idusers %><br />
+    <%= f.number_field :idusers %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

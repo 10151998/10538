@@ -1,0 +1,14 @@
+INSERT INTO tag_3_development.users SELECT * FROM tag_development.users; 
+INSERT INTO tag_3_development.schools SELECT * FROM tag_development.schools; 
+INSERT INTO tag_3_development.teachers SELECT * FROM tag_development.teachers; 
+INSERT INTO tag_3_development.trainers SELECT * FROM tag_development.trainers; 
+INSERT INTO tag_3_development.pe_classes SELECT * FROM tag_development.pe_classes; 
+
+INSERT INTO tag_3_development.sports SELECT * FROM tag_development.sports; 
+INSERT INTO tag_3_development.sport_levels SELECT * FROM tag_development.sport_levels; 
+INSERT INTO tag_3_development.locations SELECT * FROM tag_development.locations; 
+INSERT INTO tag_3_development.events SELECT * FROM tag_development.events; 
+
+INSERT INTO tag_3_development.games SELECT * FROM tag_development.games; 
+INSERT INTO tag_3_development.fun_locations SELECT * FROM tag_development.fun_locations; 
+INSERT INTO tag_3_development.funs SELECT * FROM tag_development.funs; 

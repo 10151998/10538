@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-JP" xml:lang="ja-JP">
+<head>
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "teacher" %>
+  <%= javascript_include_tag :application %>
+</head>
+  <body>
+     <nav id="site-nav" style="height:10%;padding-bottom:0.5%;">
+      <div id="logo">
+        <a href="/users/home"><%= image_tag("/assets/Logo_Copse_8-09.png", :alt => "TAG", :style => "width:85px; position:absolute;left:1.5%;margin-top:-15px;") %></a>
+        <ul>
+          <li><a href="/teachers/class_list">Class Roster</a></li>
+          <li><a href="/">Class Statistics</a></li>
+          <li><a href="/">Mentor Video Gallery</a></li>
+          <li><a href="/">P.E. Network</a></li>
+        </ul>
+        <div class="login-right">
+          <% if user_signed_in? %>Signed in as: <%= current_user.firstname %> 
+              <br> Not you? 
+              <%= link_to "Sign out", destroy_user_session_path %>
+          <% else %>
+              <%= link_to "Sign in", new_user_session_path %>
+            <% end %>
+        </div>
+      </div>
+    </nav> <!-- #site-nav -->
+    <div id="students">
+        <div id="sidebar">
+            <table>
+              <tr>
+                <td width="37%">
+                <h2><strong><%= current_user.firstname %></strong> | Log Out<h2>
+                  <%= link_to "Contact TAG Staff", '', :class => 'button' %></h5>
+             
+
+                </td>
+              </tr>
+            </table>
+        </div>
+
+        
+        <div id="gallery">
+          <div align="center" id="gallery_frame"><h6></h6>
+          <table>
+            <tr>
+              <td>
+                 <%= yield %> Look up if you can yield based on div id/class/titles
+                    </td>
+                    <td>
+                    </td>
+                  </tr>
+                </table>
+                </div>
+              </div>
+            </div>
+          </body>
+      </html>

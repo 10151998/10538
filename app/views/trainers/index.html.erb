@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "bootstrap" %>
+    <%= stylesheet_link_tag "home" %>
+    <script type="text/javascript" "jquery-countdown" ></script>
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+  </head>
+  <body>
+    <div id="students">
+        <div id="redcircle">
+            <table>
+              <tr>
+                <td width="29%">
+                <h2><strong><%= @user.firstname %></strong> | Log Out<h2>
+                </td>
+              </tr>
+              <tr class="spacer">
+                <td style="padding-top:5%">
+                  <% if @user.icon_filename != nil %>
+                    <%= image_tag("/assets/avatar/" + @user.icon_filename + ".png", :style => "height:300px; width:120px") %>
+                    <% else %>Choose an Avatar!
+                  <% end %>
+                </td>
+                <td valign="top">
+                  <h4>MY DASHBOARD</h4>
+                  <p><h5>Sport: <font color="black" style="normal"><%= UserSportPreference.find_by_user_id(current_user.id).sport.name %></font></h5></p>
+                  <p><h5>Level: <font color="black" style="normal"><% if @team != nil %><%= @team.sport_level.name %><% else %>0<% end %></font></h5></p>
+                  <p><h5>Weekly Tip: <font color="black" style="normal"><%= render '/sport_levels/guidence'%></font></h5></p>
+                  <p><h5>TAG Points: <font color="black" style="normal"><%= @user.totalSteps %></font></h5></p>
+                  <br>
+                  <p><h5><%= render '/teams/team_information'%>
+                  </br>
+                  <%= link_to "level up in your sport »", '/teams/levelup', :class => 'button' %></h5>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div id="stu_menu1"><a href="/pe_classes/home">MY CLASS</a></div>
+        <div id="stu_menu2"><a href="/trainers">MY MENTORS</a></div>
+        <div id="stu_menu3"><a href="/funs/fun_list">EVENTS</a></div>
+        <div id="gallery">
+          <div align="center" id="gallery_frame"><h6>MENTORS</h6>
+            <% @trainers.each do |trainer| %>
+              <table class="table" style="font-size:12px; text-transform:capitalize">  
+                <tbody>
+                <tr>
+                  <th width="40%">
+                    <%= image_tag("/assets/avatar/" + trainer.icon_filename + ".png", :class => "mentor_photo") %>
+                  </th>
+                  <th>
+                    <p style="margin-top:15px;"><%= trainer.firstname + ' ' + trainer.lastname %>,
+                    <i><%= trainer.sport.name %></i></p>
+                    <p>LEARN MORE</p>
+                  </th>
+                </tr>    
+            <% end %>
+            </table>
+        </div>
+      </div>
+    </body>
+</html>
+

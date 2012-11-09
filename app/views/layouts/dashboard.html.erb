@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Active Generation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <%= stylesheet_link_tag "bootstrap" %>
+    <%= stylesheet_link_tag "signup" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag 'swfobject' %>  
+    <%= csrf_meta_tag %> 
+    <%= yield :head %>
+  </head>
+  <body>        
+    <nav id="site-nav" style="height:10%;padding-bottom:0.5%;">
+      <div id="logo">
+        <a href="/users/home"><%= image_tag("/assets/Logo_Copse_8-09.png", :alt => "TAG", :style => "width:85px; position:absolute;left:1.5%;margin-top:-15px;") %></a>
+        <ul>
+          <li><a href="/users/home">Home</a></li>
+          <li><a href="/teams/home">Team</a></li>
+          <li><a href="/pe_classes/home">Class</a></li>
+        </ul>
+        <div class="login-right">
+          <% if user_signed_in? %>Signed in as: <%= current_user.firstname %>
+          <br> Not you? <%= link_to "Sign out", new_user_session_path, :method => :delete %><% else %><%= link_to "SIGN IN", new_user_session_path %>
+            <% end %>
+        </div>
+    </nav> <!-- #site-nav -->
+    <div id="container">
+      <div class="span2"><br>
+        <p style="color:black; text-shadow:none; font-size:23px; text-transform:uppercase; margin-bottom:-8px;"><%= Time.now.strftime("%A") %></p><br>
+ 	    <p style="color:black; text-shadow:none; font-size:13.5px; text-transform:uppercase;"><%= Time.now.strftime("%B %d, %Y") %></p> 
+        <p><a href="/musics/home" >
+          <i class="icon-music"></i>
+          Music
+        </a></p>
+        <p><a href="/videos/user_video_list" >
+          <i class="icon-film"></i>
+          Video
+        </a></p>
+        <p><a href="/challenge_messages/home" >
+          <i class="icon-envelope"></i>
+          Message
+        </a></p>  
+        <a class="btn btn-dashboard">Challenges</a><br>
+        <a href="/mentor_messages/home", class="btn btn-dashboard">Athletic Mentors</a>
+      </div>
+      <div class = "span10"> 
+        <%= yield %>
+      </div>
+    <% if current_user.image != nil %>
+      <%= image_tag(current_user.image.image(:large), :id => 'background-img', :class => "bg") %>
+    <% end %>
+    <footer>
+      <p>&copy; The Active Generation 2012</p>
+      <%= yield :scripts %>
+    </footer>
+  </div>
+  </body>
+</html>
+

@@ -1,0 +1,14 @@
+<%= form_for(@user, :url => { :action => "update_avatar" } ) do |f| %>
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password %>
+  </div>
+  <div>
+    <%= image_submit_tag "avatar/1.png", :name => "icon_filename", :value => "1", :style => "height:50px; width:50px; float:left;" %>
+    <%= image_submit_tag "avatar/2.png", :name => "icon_filename", :value => "2", :style => "height:50px; width:50px; float:left;" %>
+    <%= image_submit_tag "avatar/3.png", :name => "icon_filename", :value => "3", :style => "height:50px; width:50px; float:left;" %>
+    <%= image_submit_tag "avatar/4.png", :name => "icon_filename", :value => "4", :style => "height:50px; width:50px; float:left;" %>
+    <%= image_submit_tag "avatar/5.png", :name => "icon_filename", :value => "5", :style => "height:50px; width:50px; float:left;" %>
+    <%= image_submit_tag "avatar/6.png", :name => "icon_filename", :value => "6", :style => "height:50px; width:50px; float:left;" %>
+  </div>
+<% end %>

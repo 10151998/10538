@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idusers: 1
+  idsports: 1
+
+two:
+  idusers: 1
+  idsports: 1

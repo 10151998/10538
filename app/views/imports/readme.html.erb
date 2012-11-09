@@ -1,0 +1,24 @@
+<h3>Readme:</h3>
+<h4>1. Setup mysql: </h4>
+<li>edit /config/database.yml</li>
+<li>migrate tables: </li>
+  $ rake db:migrate</br>
+<h4>2. Create 1st admin:</h4>
+<li>in local terminal, start rails console access:</li>
+  $ rails console</br>
+<li>create an admin: </li>
+  $ admin=Admin.new(:email=>'email_of_admin',:username=>'username_of_admin',:password=>'password_of_admin')</br>
+  $ admin.save
+<li>exit rails console access: </li>
+  $ exit
+<li>or in heroku, start remote console access:</li>
+  $ heroku console</br>
+<h4>3. Upload data: </h4>
+<li>1st group: schools -> teachers -> pe_classes -> users</li>
+<li>2nd group: sports -> trainers -> sport_levels</li>
+<li>3rd group: games -> fun_locations -> funs</li>
+<li>4th group: levels</li>
+<h5>notes:</h5>
+<li>follow the orders</li>
+<li>upload csv file -> check from 'index' page</li>
+<li>manage foreign keys carefully</li>

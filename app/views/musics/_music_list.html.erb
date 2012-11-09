@@ -1,0 +1,14 @@
+<%= form_tag('/musics/music_list') do %>
+  <% @musics.each do |music| %>
+    <div><i class="icon-music"></i>
+    <%= music.name %></div>
+    <div><%= music.artist %></div>
+    <div><%= music.popularity %></div>
+    <div><i class="icon-heart"></i>
+    <%= submit_tag 'like', :name => "like[#{music.id}]", :disabled => MusicLike.find_by_sql("SELECT * FROM music_likes WHERE user_id = " + current_user.id.to_s + " AND music_id = " + music.id.to_s).any? %></div><br>
+  <% end %>
+  <a class="btn btn-info" href="/musics/new">
+    <i class="icon-headphones"></i>
+    Recommend
+  </a>
+<% end %>

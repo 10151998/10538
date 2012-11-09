@@ -1,0 +1,38 @@
+<head>
+  <%= stylesheet_link_tag "home" %>
+</head>
+<body>
+    <div id="students">
+        <div id="redcircle">
+          <div id="profile">
+              <div class="row">
+                <div class="span4">
+                  <h1><strong></strong><span style="font-family: 'Quicksand';text-shadow:'0 0.05em 0 #ffffff';"> | Core Training </span></h1>
+                </div>
+                <div class="span3">
+                  <img src="/assets/erin_parker.png">
+                  <h4><strong>MENTOR PROFILE</strong></h4>
+                  <p>Focus: Track & Weights</p>
+                  <p>Age: 23</p>
+                  <p><button class="btn" href="#">More Info &raquo;</button></p>
+                  <p><button class="btn" href="#">Email this mentor &raquo;</button></p>
+                  <br>
+                  <p>A passionate long-distance runner and Stanford alum, Erin is dedicated to positively impacting the health & fitness of youths. Always up for working out, dancing, spontaneous adventures, her mantra is "never bend easy."</p>
+
+                  <br>
+
+                  <p>
+                  Favorite Quote: "The only easy day was yesterday." - Navy SEAL Training</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      <div id="stu_menu1">MY TEAM</div>
+      <div id="stu_menu2">MY CLASS</div>
+      <div id="stu_menu3">EVENTS</div>
+      <div id="gallery">My Events:
+          <%= render '/funs/my_fun_list'%>
+      </div>
+    </div>
+  </body>
+</html>

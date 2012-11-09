@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Idusers:</b>
+  <%= @usersports_preference.user_id %>
+</p>
+
+<p>
+  <b>Idsports:</b>
+  <%= @usersports_preference.sport_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_usersports_preference_path(@usersports_preference) %> |
+<%= link_to 'Back', usersports_preferences_path %>

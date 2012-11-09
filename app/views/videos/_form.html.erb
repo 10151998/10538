@@ -1,0 +1,8 @@
+<%= form_for :video, :as => @video, :url => {:action => "create"}, :html => {:multipart => true, :class => 'styledform' } do |f| %>
+  <p>
+    <%= f.file_field :video %>
+  </p>
+  <p>
+    <%= f.submit %> or <%= link_to 'Cancel', videos_path %>
+  </p>
+<% end %>

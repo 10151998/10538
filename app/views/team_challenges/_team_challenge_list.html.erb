@@ -1,0 +1,5 @@
+  <% @team_challenges.each do |team_challenge| %>
+      team:<%= Team.find(team_challenge.sender_team_id).name %> vs. team: <%= Team.find(team_challenge.receiver_team_id).name %>:</br>
+      datetime: <%= team_challenge.datetime %></br>
+      location: <%= team_challenge.location %></br>
+  <% end %>

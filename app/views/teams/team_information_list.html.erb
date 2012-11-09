@@ -1,0 +1,11 @@
+<h1>Listing teams information</h1>
+
+  <% @teams.each do |team| %>
+    <div>Team name: <%= team.name %></div>
+    <div>Sport: <%= team.event.sport.name %></div>
+    <div>Level status: <%= team.sport_level.name %></div>
+    <%= link_to 'challenge', :controller => 'challenge_messages', :action => 'new_invite', :id => team.id %>
+    <% if flash.keep(:notice_challenge_constrain) %>
+      <%= flash[:notice_challenge_constrain] %>
+    <% end %></br>
+  <% end %>
