@@ -9,12 +9,7 @@
      <nav id="site-nav" style="height:10%;padding-bottom:0.5%;">
       <div id="logo">
         <a href="/users/home"><%= image_tag("/assets/Logo_Copse_8-09.png", :alt => "TAG", :style => "width:85px; position:absolute;left:1.5%;margin-top:-15px;") %></a>
-        <ul>
-          <li><a href="/teachers/class_list">Class Roster</a></li>
-          <li><a href="/">Class Statistics</a></li>
-          <li><a href="/">Mentor Video Gallery</a></li>
-          <li><a href="/">P.E. Network</a></li>
-        </ul>
+        
         <div class="login-right">
           <% if user_signed_in? %>Signed in as: <%= current_user.firstname %> 
               <br> Not you? 
@@ -27,12 +22,26 @@
     </nav> <!-- #site-nav -->
     <div id="students">
         <div id="sidebar">
-            <table>
+            <table>  
+            <br>               
+              <a href="/teachers/home">Welcome</a>
+
               <tr>
-                <td width="37%">
-                <h2><strong><%= current_user.firstname %></strong> | Log Out<h2>
-                  <%= link_to "Contact TAG Staff", '', :class => 'button' %></h5>
+                <td width="37%">    
+                <ul>
+                  <li><a href="/teachers/class_list">My Classes</a></li>
+                  <li><a href="/">Class Statistics</a></li>
+                  <li><a href="/">Mentor Video Gallery</a></li>
+                  <li><a href="/">P.E. Network</a></li>
+                  </ul>
+                  <h2>TAG Tidbits:</h2>
+                  <h1><a href="/">Upcoming Events</a></h1>
+                  <h1><a href="/">Top TAG Teams</a></h1>
+                  <h1><a href="/">Weekly Tips</a></h1>
+                  <br>
+                  <%= link_to "Contact TAG Staff", '', :class => 'button' %>
              
+                </ul>             
 
                 </td>
               </tr>

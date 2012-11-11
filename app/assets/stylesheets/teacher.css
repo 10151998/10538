@@ -1,4 +1,4 @@
-body {
+ body {
       margin: 0;
       background-color: black;
       letter-spacing: 1px;
@@ -160,7 +160,7 @@ body {
       text-decoration: none;
     }
     #students {
-      background-image: url(/assets/Dargie-2b.png);
+      background-image: url(/assets/woodenflr.jpg);
       background-repeat: no-repeat;
       background-color: black;
       background-size: 70% 100%;
@@ -189,26 +189,38 @@ body {
       height: 680px;
       width: 30%;
       text-align: left;
-      font-size: 16px;
+      font-size: 26px;
       color: black;
-      border-radius: 5px;
+      border-radius: 0px;
       margin: 0;
       box-shadow: 2px 2px 12px #313032;
       border-color: #181718;
-      border-style: inset;
+      border-style: none;
       border-size: .5px;
       border-width: 2px;
-      text-transform:capitalize
+      text-transform:capitalize;
     }
     #sidebar table {
       margin-left: 10%;
       margin-top: 5%;
-      font-size: 25px;
+      font-size: 24px;
+      line-height: 40px;
+    }
+    #sidebar :hover {
+      color:black;
+    }
+    #sidebar li a:hover {
+      color: red;
+      cursor:hand;
     }
     #sidebar tr a {
       font-style: none;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 16px;
+      line-height: 45px;
+    }
+    #sidebar tr a:hover {
+      color: red;
     }
     #sidebar tr .spacer > td {
       padding-top: 10%;
@@ -221,11 +233,16 @@ body {
       text-decoration: none;
     }
     #sidebar h1 {
-      font-size: 20px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight:normal;
       color: black;
+      padding-left: 30px;
+      line-height: 10px;
     }
     #sidebar h2 {
-      font-size: 20px;
+      font-size: 16px;
+      font-style:bold;
     }
     #sidebar h3 {
       color: black;
@@ -246,6 +263,9 @@ body {
       margin: 0;
       padding: 0;
       text-decoration: none;
+    }
+    #sidebar h5:hover {
+      color:red;
     }
     #sidebar h6 {
       font-size: 14px;
@@ -275,6 +295,7 @@ body {
     }
     #gallery_frame {
       margin-top: 8%;
+      margin-left: 0%
     }
     #gallery_frame h6 {
       font-size: 20px;
@@ -305,8 +326,8 @@ body {
     #gallery table {
       margin: auto;
       margin-top:20px;
-      font-size: 25px;
-      line-height: 26px;
+      font-size: 18px;
+      line-height: 45px;
     }
     #gallery a {
       color: white;
@@ -321,7 +342,7 @@ body {
       color: white;
     }
     #gallery_frame table tr:hover  a:hover {
-      color: red;
+      color: white;
     }
     #stu_menu1, #stu_menu2, #stu_menu3 {
       z-index: 1000;
@@ -336,7 +357,7 @@ body {
       border-size: 3px;
       border-color: rgba(0,0,0,0.8);
       box-shadow: 2px 3px 18px #000000;
-      margin-left: 30px;
+      margin-left: 300ßpx;
       height: 80px;
       padding-top: 40px;
       margin-top: -12%;
