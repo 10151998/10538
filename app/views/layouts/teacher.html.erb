@@ -23,19 +23,18 @@
     <div id="students">
         <div id="sidebar">
             <table>  
-            <br>               
-              <a href="/teachers/home">Welcome</a>
-
+            <br>              
+              <a href="/teachers/home">Welcome, <strong><%= current_user.firstname %></strong>!</a>
               <tr>
                 <td width="37%">    
                 <ul>
-                  <li><a href="/teachers/class_list">My Classes</a></li>
-                  <li><a href="/">Class Statistics</a></li>
+                  <li><a href="/teachers/class_list">My Classes</a></li> 
+                  <li><a href="/teachers/student_information">Class Statistics</a></li>
                   <li><a href="/">Mentor Video Gallery</a></li>
                   <li><a href="/">P.E. Network</a></li>
                   </ul>
                   <h2>TAG Tidbits:</h2>
-                  <h1><a href="/">Upcoming Events</a></h1>
+                  <h1><a href="/teachers/event_list">Upcoming Events</a></h1>
                   <h1><a href="/">Top TAG Teams</a></h1>
                   <h1><a href="/">Weekly Tips</a></h1>
                   <br>
